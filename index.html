@@ -29,6 +29,20 @@
 
             const australia = [australian_pat, australian_tmk, australian_ind];
 
+            const bosnia_herz_pat = [/^bap \d{2} \d{3,}$/i, pat];
+            const bosnia_herz_tmk = [/^baz \d{2} \d{3,}$/i, tmk];
+            const bosnia_herz_ind = [/^bad \d{2} \d{3,}$/i, ind];
+
+            const bosnia_herz = [bosnia_herz_pat, bosnia_herz_tmk, bosnia_herz_ind];
+
+            bosnia_herz.forEach(type => {
+                let regex = type[0];
+                if (regex.test(query)) {
+                    document.getElementById('result').innerText = "BOSNIA AND HERZEGOVINA: " + type[1];
+                    found_match = true;
+                    }
+            }); 
+
             australia.forEach(type => {
                 let regex = type[0];
                 if (regex.test(query)) {

@@ -1,0 +1,37 @@
+<!DOCTYPE html5>
+<html>
+<head>
+    <script>
+        function lookup() {
+
+            let query = document.getElementById("mystery-string").value;
+            let found_match = false;
+
+            const austrian_pat = [/a \d{3}\/\d{4}/i,  "Patent"];
+            const austrian_spc = [/sz \d{3}\/\d{4}/i, "SPC (Supplementary Protection Certificates)"];
+            const austrian_umc = [/gm \d{3}\/\d{4}/i, "Utility Model / Utility certificate OR International utility model application under the PCT (PCT application in the national phase)"];
+            const austrian_tmk = [/am \d{3}\/\d{4}/i, "Trade Mark"];
+            const austrian_ind = [/mu \d{3}\/\d{4}/i, "Industrial design"];
+            const austrian_lay = [/hl \d{3}\/\d{4}/i, "Layout-design (topography) of integrated circuits"];
+
+            const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
+
+            austria.forEach(type => {
+                let regex = type[0];
+                if (regex.test(query)) {
+                    document.getElementById('result').innerText = "Austria: " + type[1];
+                    found_match = true;
+                    }
+            }); 
+            if (! found_match) document.getElementById('result').innerText = "that doesn't match any IP known format";          
+            
+        }
+    </script>
+</head>
+<body>
+    <label for="mystery-string">Enter IP number:</label>
+    <input type="text" id="mystery-string" name="mystery-string" onchange="lookup()">
+    <br>
+    <p id='result'></p>
+</body>
+</html>

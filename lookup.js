@@ -63,7 +63,7 @@ function lookup() {
     const brazil_utl_3 = [BR, utl_div, /^22\d{10}$/i];
     const brazil_ind_1 = [BR, ind_app, /^30\d{10}$/i];
     const brazil_ind_2 = [BR, ind_hag, /^31\d{10}$/i];
-    const brazil_ind_3 = [BR, ind_app, /^32\d{10}$/i];
+    const brazil_ind_3 = [BR, ind_div, /^32\d{10}$/i];
     const brazil_geo_1 = [BR, geo_src, /^40\d{10}$/i];
     const brazil_geo_2 = [BR, geo_org, /^41\d{10}$/i];
     const brazil_geo_3 = [BR, geo_lis, /^42\d{10}$/i];

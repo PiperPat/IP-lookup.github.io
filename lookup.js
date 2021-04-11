@@ -61,7 +61,13 @@ function lookup() {
     const brazil_utl_1 = [BR, utl_pco, /^20\d{10}$/i];
     const brazil_utl_2 = [BR, utl_pct, /^21\d{10}$/i];
     const brazil_utl_3 = [BR, utl_div, /^22\d{10}$/i];
-    const brazil_ind_3 = [BR, ind_app, /^22\d{10}$/i];
+    const brazil_ind_1 = [BR, ind_app, /^30\d{10}$/i];
+    const brazil_ind_2 = [BR, ind_hag, /^31\d{10}$/i];
+    const brazil_ind_3 = [BR, ind_app, /^32\d{10}$/i];
+    const brazil_geo_1 = [BR, geo_src, /^40\d{10}$/i];
+    const brazil_geo_2 = [BR, geo_org, /^41\d{10}$/i];
+    const brazil_geo_3 = [BR, geo_lis, /^42\d{10}$/i];
+    const brazil_geo_4 = [BR, geo_div, /^43\d{10}$/i];
 
     const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
     const australia = [australian_pat, australian_tmk, australian_ind];
@@ -70,7 +76,9 @@ function lookup() {
     const bulgaria = [bulgaria_pat, bulgaria_spc, bulgaria_umc, bulgaria_ind];
     const brazil = [
         brazil_pat_1, brazil_pat_2, brazil_pat_3, brazil_pat_4,
-        brazil_utl_1, brazil_utl_2, brazil_utl_3
+        brazil_utl_1, brazil_utl_2, brazil_utl_3,
+        brazil_ind_1, brazil_ind_2, brazil_ind_3, 
+        brazil_geo_1, brazil_geo_2, brazil_geo_3, brazil_geo_4  
     ];
 
     const countries = [austria, australia, bosnia_herz, belgium, bulgaria, brazil];

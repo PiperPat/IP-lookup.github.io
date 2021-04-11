@@ -53,7 +53,7 @@ const CV = "Cabo Verde";
 const CW = "Curaçao";
 const CX = "Christmas Island";
 const CY = "Cyprus";
-const CZ = "Czechia";
+const CZ = "Czech Republic";
 const DE = "Germany";
 const DJ = "Djibouti";
 const DK = "Denmark";
@@ -250,3 +250,4 @@ const ZW = "Zimbabwe";
 
 const UK = "United Kingdom";
 const EU = "Europe";
+const EA = "Eurasian Patent Office";

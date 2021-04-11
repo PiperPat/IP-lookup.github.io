@@ -11,6 +11,24 @@ function lookup() {
     const lay = "Layout-design (topography) of integrated circuits";
     const pvc = "Certificate for new plants variety";
 
+    const pat_pco = "applications filed by nationals and applications filed through Paris Convention";
+    const pat_pct = "PCT applications";
+    const pat_div = "divided patent applications";
+    const pat_coa = "applications for certificates of addition";
+
+    const utl_pco = "applications filed by nationals and applications filed through Paris Convention";
+    const utl_pct = "PCT applications";
+    const utl_div = "divided utility model applications";
+
+    const ind_app = "applications for industrial design";
+    const ind_hag = "applications for industrial design through the Hague Agreement";
+    const ind_div = "divided industrial design applications";
+
+    const geo_src = "geographical indication application: Indication of source";
+    const geo_org = "geographical indication application: Appellation of origin";
+    const geo_lis = "applications for geographical indication through the Lisbon Agreement";
+    const geo_div = "divided geographical indication applications";
+    
 
     const austrian_pat = [AT, pat, /^a \d{3}\/\d{4}$/i];
     const austrian_spc = [AT, spc, /^sz \d{3}\/\d{4}$/i];
@@ -31,12 +49,24 @@ function lookup() {
     const belgium_spc = [BE, spc, /^\d{4} C \/ \d{3} $/i]; // not working
     const belgium_pvc = [BE, pvc, /^\d{5}$/i];
 
+    const bulgaria_pat = [BG, pat, /^10\d{6}[A-Z]?$/i];
+    const bulgaria_spc = [BG, spc, /^14\d{6}[A-Z]?$/i];
+    const bulgaria_umc = [BG, umc, /^U\d{6}[A-Z]?$/i];
+    const bulgaria_ind = [BG, ind, /^D\d{6}[A-Z]?$/i];
+
+    const brazil_pat_1 = [BR, pat_pco, /^10\d{10}$/i];
+    const brazil_pat_2 = [BR, pat_pct, /^11\d{10}$/i];
+    const brazil_pat_3 = [BR, pat_div, /^12\d{10}$/i];
+    const brazil_pat_4 = [BR, pat_coa, /^13\d{10}$/i];
+
     const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
     const australia = [australian_pat, australian_tmk, australian_ind];
     const bosnia_herz = [bosnia_herz_pat, bosnia_herz_tmk, bosnia_herz_ind];
     const belgium = [belgium_pat, belgium_spc, belgium_pvc];
+    const bulgaria = [bulgaria_pat, bulgaria_spc, bulgaria_umc, bulgaria_ind];
+    const brazil = [brazil_pat_1, brazil_pat_2, brazil_pat_3, brazil_pat_4]
 
-    const countries = [austria, australia, bosnia_herz, belgium];
+    const countries = [austria, australia, bosnia_herz, belgium, bulgaria, brazil];
 
     countries.forEach(country => {
         // Australia is a basket case

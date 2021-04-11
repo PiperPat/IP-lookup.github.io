@@ -10,11 +10,13 @@ function lookup() {
     const ind = "Industrial design";
     const lay = "Layout-design (topography) of integrated circuits";
     const pvc = "Certificate for new plants variety";
+    const geo = "Geographical Indications";
 
     const pat_pco = "applications filed by nationals and applications filed through Paris Convention";
     const pat_pct = "PCT applications";
     const pat_div = "divided patent applications";
     const pat_coa = "applications for certificates of addition";
+    const pat_pla = "plant patents";
 
     const utl_pco = "applications filed by nationals and applications filed through Paris Convention";
     const utl_pct = "PCT applications";
@@ -28,7 +30,7 @@ function lookup() {
     const geo_org = "geographical indication application: Appellation of origin";
     const geo_lis = "applications for geographical indication through the Lisbon Agreement";
     const geo_div = "divided geographical indication applications";
-    
+
 
     const austrian_pat = [AT, pat, /^a \d{3}\/\d{4}$/i];
     const austrian_spc = [AT, spc, /^sz \d{3}\/\d{4}$/i];
@@ -54,20 +56,30 @@ function lookup() {
     const bulgaria_umc = [BG, umc, /^U\d{6}[A-Z]?$/i];
     const bulgaria_ind = [BG, ind, /^D\d{6}[A-Z]?$/i];
 
-    const brazil_pat_1 = [BR, pat_pco, /^10\d{10}$/i];
-    const brazil_pat_2 = [BR, pat_pct, /^11\d{10}$/i];
-    const brazil_pat_3 = [BR, pat_div, /^12\d{10}$/i];
-    const brazil_pat_4 = [BR, pat_coa, /^13\d{10}$/i];
-    const brazil_utl_1 = [BR, utl_pco, /^20\d{10}$/i];
-    const brazil_utl_2 = [BR, utl_pct, /^21\d{10}$/i];
-    const brazil_utl_3 = [BR, utl_div, /^22\d{10}$/i];
-    const brazil_ind_1 = [BR, ind_app, /^30\d{10}$/i];
-    const brazil_ind_2 = [BR, ind_hag, /^31\d{10}$/i];
-    const brazil_ind_3 = [BR, ind_div, /^32\d{10}$/i];
-    const brazil_geo_1 = [BR, geo_src, /^40\d{10}$/i];
-    const brazil_geo_2 = [BR, geo_org, /^41\d{10}$/i];
-    const brazil_geo_3 = [BR, geo_lis, /^42\d{10}$/i];
-    const brazil_geo_4 = [BR, geo_div, /^43\d{10}$/i];
+    const brazil_pat_1 = [BR, pat_pco, /^(BR )?10\d{10}$/i];
+    const brazil_pat_2 = [BR, pat_pct, /^(BR )?11\d{10}$/i];
+    const brazil_pat_3 = [BR, pat_div, /^(BR )?12\d{10}$/i];
+    const brazil_pat_4 = [BR, pat_coa, /^(BR )?13\d{10}$/i];
+    const brazil_utl_1 = [BR, utl_pco, /^(BR )?20\d{10}$/i];
+    const brazil_utl_2 = [BR, utl_pct, /^(BR )?21\d{10}$/i];
+    const brazil_utl_3 = [BR, utl_div, /^(BR )?22\d{10}$/i];
+    const brazil_ind_1 = [BR, ind_app, /^(BR )?30\d{10}$/i];
+    const brazil_ind_2 = [BR, ind_hag, /^(BR )?31\d{10}$/i];
+    const brazil_ind_3 = [BR, ind_div, /^(BR )?32\d{10}$/i];
+    const brazil_geo_1 = [BR, geo_src, /^(BR )?40\d{10}$/i];
+    const brazil_geo_2 = [BR, geo_org, /^(BR )?41\d{10}$/i];
+    const brazil_geo_3 = [BR, geo_lis, /^(BR )?42\d{10}$/i];
+    const brazil_geo_4 = [BR, geo_div, /^(BR )?43\d{10}$/i];
+    const brazil_tmk = [BR, tmk, /^\d{9}$/i];
+
+    const belarus_pat = [BY, pat + " and " + pat_pct, /^a\s?\d{8}$/i];
+    const belarus_pct = [BY, pat_pla, /^v\s?\d{8}$/i];
+    const belarus_umc = [BY, umc, /^u\s?\d{8}$/i];
+    const belarus_ind = [BY, ind, /^f\s?\d{8}$/i];
+    const belarus_lay = [BY, lay, /^t\s?\d{8}$/i];
+    const belarus_geo = [BY, geo, /^g\s?\d{8}$/i];
+    const belarus_tmk = [BY, tmk, /^\d{8}$/i];
+
 
     const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
     const australia = [australian_pat, australian_tmk, australian_ind];
@@ -77,11 +89,17 @@ function lookup() {
     const brazil = [
         brazil_pat_1, brazil_pat_2, brazil_pat_3, brazil_pat_4,
         brazil_utl_1, brazil_utl_2, brazil_utl_3,
-        brazil_ind_1, brazil_ind_2, brazil_ind_3, 
-        brazil_geo_1, brazil_geo_2, brazil_geo_3, brazil_geo_4  
+        brazil_ind_1, brazil_ind_2, brazil_ind_3,
+        brazil_geo_1, brazil_geo_2, brazil_geo_3, brazil_geo_4,
+        brazil_tmk
+    ];
+    const belarus = [
+        belarus_pat, belarus_pct,
+        belarus_umc, belarus_ind, belarus_lay, belarus_geo,
+        belarus_tmk
     ];
 
-    const countries = [austria, australia, bosnia_herz, belgium, bulgaria, brazil];
+    const countries = [austria, australia, bosnia_herz, belgium, bulgaria, brazil, belarus];
 
     countries.forEach(country => {
         // Australia is a basket case

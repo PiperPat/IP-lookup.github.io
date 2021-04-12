@@ -45,6 +45,7 @@ const geo_org = "geographical indication application: Appellation of origin";
 const geo_lis = "applications for geographical indication through the Lisbon Agreement";
 const geo_div = "divided geographical indication applications";
 const geo_usr = "Users of geographical indications and designations of origin";
+const geo_app = "Designation (appellation) of Origin";
 
 const tmk_nat = tmk + " (national line)";
 const tmk_int = tmk + " (international line)";
@@ -255,13 +256,23 @@ const russia_lay = [RU, lay, /^(RU)?\d{4}63\d{4}$/];
 const russia_prg = [RU, prg, /^(RU)?\d{4}(61|66)\d{4}$/];
 const russia_dtb = [RU, dtb, /^(RU)?\d{4}62\d{4}$/];
 
-const sweden_tmk = [SE, tmk, /^\d{4}\/\d{5}$/i];
-const sweden_ind = [SE, ind, /^\d{4}\/\d{4}$/i];
+// from this point, I've started using year regex properly
+const sweden_tmk = [SE, tmk, /^[1,2][8,9,0]\d{2}\/\d{5}$/i];
+const sweden_ind = [SE, ind, /^[1,2][8,9,0]\d{2}\/\d{4}$/i];
 const sweden_pat0 = [SE, pat_se0, /^\d{2}0\d{4}-\d$/i];
 const sweden_pat3 = [SE, pat_se3, /^\d{2}3\d{4}-\d$/i];
 const sweden_pat5 = [SE, pat_se5, /^\d{2}5\d{4}-\d$/i];
 const sweden_pat7 = [SE, pat_se7, /^\d{2}7\d{4}-\d$/i];
 const sweden_pat9 = [SE, pat_se9, /^\d{2}9\d{4}-\d$/i];
+
+const slovakia_pat = [SK, pat_wiz, /^(PP\s?)?\d{5}-[1,2][8,9,0]\d{2}$/i];
+const slovakia_uma = [SK, uma, /^(PUV\s?)?\d{5}-[1,2][8,9,0]\d{2}(\s?U)?$/i];
+const slovakia_poz = [SK, tmk, /^(POZ\s?)?\d{4}-[1,2][8,9,0]\d{2}$/i];
+const slovakia_ind = [SK, ind, /^(PD\s?)?\d{2}-[1,2][8,9,0]\d{2}$/i];
+const slovakia_spc = [SK, spc, /^(PDO\s?)?\d{4}-[1,2][8,9,0]\d{2}$/i];
+const slovakia_org = [SK, geo_app, /^(POP\s?)?\d{1}-[1,2][8,9,0]\d{2}$/i];
+const slovakia_geo = [SK, geo, /^(PZO\s?)?\d{1}-[1,2][8,9,0]\d{2}$/i];
+const slovakia_pto = [SK, lay, /^(PTO\s?)?\d{4}-[1,2][8,9,0]\d{2}$/i];
 
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
@@ -328,6 +339,10 @@ const romania = [romania_pat, romania_umc, romania_tmk, romania_ind, romania_spc
 const serbia = [serbia_pat, serbia_inn, serbia_tmk, serbia_ind, serbia_lay];
 const russia = [russia_pat, russia_ind, russia_tmk, russia_lay, russia_prg, russia_dtb];
 const sweden = [sweden_tmk, sweden_ind, sweden_pat0, sweden_pat3, sweden_pat5, sweden_pat7, sweden_pat9];
+const slovakia = [
+    slovakia_pat, slovakia_uma, slovakia_poz, slovakia_ind, slovakia_spc,
+    slovakia_org, slovakia_geo, slovakia_pto
+];
 
 const countries = [
     austria,
@@ -361,5 +376,6 @@ const countries = [
     romania,
     serbia,
     russia,
-    sweden
+    sweden,
+    slovakia
 ];

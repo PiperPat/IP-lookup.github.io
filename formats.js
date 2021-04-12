@@ -22,11 +22,16 @@ const utl_div = "divided utility model applications";
 const ind_app = "applications for industrial design";
 const ind_hag = "applications for industrial design through the Hague Agreement";
 const ind_div = "divided industrial design applications";
+const ind_nat = "Industrial designs (national line)";
+const ind_int = "Industrial designs (international line)";
 
 const geo_src = "geographical indication application: Indication of source";
 const geo_org = "geographical indication application: Appellation of origin";
 const geo_lis = "applications for geographical indication through the Lisbon Agreement";
 const geo_div = "divided geographical indication applications";
+
+const tmk_nat = "Trade marks (national line)";
+const tmk_int = "Trade marks (international line)";
 
 
 const austrian_pat = [AT, pat, /^a \d{3}\/\d{4}$/i];
@@ -53,20 +58,20 @@ const bulgaria_spc = [BG, spc, /^14\d{6}[A-Z]?$/i];
 const bulgaria_umc = [BG, umc, /^U\d{6}[A-Z]?$/i];
 const bulgaria_ind = [BG, ind, /^D\d{6}[A-Z]?$/i];
 
-const brazil_pat_1 = [BR, pat_pco, /^(BR )?10\d{10}$/i];
-const brazil_pat_2 = [BR, pat_pct, /^(BR )?11\d{10}$/i];
-const brazil_pat_3 = [BR, pat_div, /^(BR )?12\d{10}$/i];
-const brazil_pat_4 = [BR, pat_coa, /^(BR )?13\d{10}$/i];
-const brazil_utl_1 = [BR, utl_pco, /^(BR )?20\d{10}$/i];
-const brazil_utl_2 = [BR, utl_pct, /^(BR )?21\d{10}$/i];
-const brazil_utl_3 = [BR, utl_div, /^(BR )?22\d{10}$/i];
-const brazil_ind_1 = [BR, ind_app, /^(BR )?30\d{10}$/i];
-const brazil_ind_2 = [BR, ind_hag, /^(BR )?31\d{10}$/i];
-const brazil_ind_3 = [BR, ind_div, /^(BR )?32\d{10}$/i];
-const brazil_geo_1 = [BR, geo_src, /^(BR )?40\d{10}$/i];
-const brazil_geo_2 = [BR, geo_org, /^(BR )?41\d{10}$/i];
-const brazil_geo_3 = [BR, geo_lis, /^(BR )?42\d{10}$/i];
-const brazil_geo_4 = [BR, geo_div, /^(BR )?43\d{10}$/i];
+const brazil_pat_1 = [BR, pat_pco, /^(BR\s)?10\d{10}$/i];
+const brazil_pat_2 = [BR, pat_pct, /^(BR\s)?11\d{10}$/i];
+const brazil_pat_3 = [BR, pat_div, /^(BR\s)?12\d{10}$/i];
+const brazil_pat_4 = [BR, pat_coa, /^(BR\s)?13\d{10}$/i];
+const brazil_utl_1 = [BR, utl_pco, /^(BR\s)?20\d{10}$/i];
+const brazil_utl_2 = [BR, utl_pct, /^(BR\s)?21\d{10}$/i];
+const brazil_utl_3 = [BR, utl_div, /^(BR\s)?22\d{10}$/i];
+const brazil_ind_1 = [BR, ind_app, /^(BR\s)?30\d{10}$/i];
+const brazil_ind_2 = [BR, ind_hag, /^(BR\s)?31\d{10}$/i];
+const brazil_ind_3 = [BR, ind_div, /^(BR\s)?32\d{10}$/i];
+const brazil_geo_1 = [BR, geo_src, /^(BR\s)?40\d{10}$/i];
+const brazil_geo_2 = [BR, geo_org, /^(BR\s)?41\d{10}$/i];
+const brazil_geo_3 = [BR, geo_lis, /^(BR\s)?42\d{10}$/i];
+const brazil_geo_4 = [BR, geo_div, /^(BR\s)?43\d{10}$/i];
 const brazil_tmk = [BR, tmk, /^\d{9}$/i];
 
 const belarus_pat = [BY, pat + " and " + pat_pct, /^a\s?\d{8}$/i];
@@ -108,6 +113,27 @@ const germany_tmk = [DE, tmk, /^30\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 const germany_geo = [DE, geo, /^31\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 const germany_ind = [DE, ind, /^40\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 
+const eurasia_pat = [EA, pat, /^(EA\s?)?\d{9}$/];
+
+const estonia_pat = [EE, pat, /^P\d{9}$/i];
+const estonia_spc = [EE, spc, /^C\d{9}$/i];
+const estonia_umc = [EE, umc, /^U\d{9}$/i];
+const estonia_uma = [EE, uma, /^P\d{9}$/i];
+const estonia_tmn = [EE, tmk_nat, /^M\d{9}$/i];
+const estonia_inn = [EE, ind_nat, /^D\d{9}$/i];
+const estonia_tmi = [EE, tmk_int, /^R\d{9}$/i];
+const estonia_ini = [EE, ind_int, /^H\d{9}$/i];
+const estonia_geo = [EE, geo, /^G\d{9}$/i];
+const estonia_pat_div = [EE, pat_div, /^P\d{9}[A-Z]*$/i];
+const estonia_spc_div = [EE, spc + ' (divisional)', /^C\d{9}[A-Z]*$/i];
+const estonia_umc_div = [EE, umc + ' (divisional)', /^U\d{9}[A-Z]*$/i];
+const estonia_uma_div = [EE, uma + ' (divisional)', /^P\d{9}[A-Z]*$/i];
+const estonia_tmn_div = [EE, tmk_nat + ' (divisional)', /^M\d{9}[A-Z]*$/i];
+const estonia_inn_div = [EE, ind_nat + ' (divisional)', /^D\d{9}[A-Z]*$/i];
+const estonia_tmi_div = [EE, tmk_int + ' (divisional)', /^R\d{9}[A-Z]*$/i];
+const estonia_ini_div = [EE, ind_int + ' (divisional)', /^H\d{9}[A-Z]*$/i];
+const estonia_geo_div = [EE, geo_div, /^G\d{9}[A-Z]*$/i];
+
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
 const bosnia_herz = [bosnia_herz_pat, bosnia_herz_tmk, bosnia_herz_ind];
@@ -144,6 +170,27 @@ const germany = [
     germany_tmk, germany_geo,
     germany_ind
 ];
+const eurasia = [eurasia_pat];
+const estonia = [
+    estonia_pat,
+    estonia_spc,
+    estonia_umc,
+    estonia_uma,
+    estonia_tmn,
+    estonia_inn,
+    estonia_tmi,
+    estonia_ini,
+    estonia_geo,
+    estonia_pat_div,
+    estonia_spc_div,
+    estonia_umc_div,
+    estonia_uma_div,
+    estonia_tmn_div,
+    estonia_inn_div,
+    estonia_tmi_div,
+    estonia_ini_div,
+    estonia_geo_div
+];
 
 const countries = [
     austria,
@@ -157,5 +204,7 @@ const countries = [
     china,
     costa_rica,
     czech,
-    germany
+    germany,
+    eurasia,
+    estonia
 ];

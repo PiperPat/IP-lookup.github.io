@@ -248,6 +248,6 @@ const ZA = "South Africa";
 const ZM = "Zambia";
 const ZW = "Zimbabwe";
 
-const UK = "United Kingdom";
-const EU = "Europe";
 const EA = "Eurasian Patent Office";
+const EM = "OHIM";
+const EP = "European Patent Office";

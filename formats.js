@@ -1,5 +1,5 @@
 const pat = "Patents";
-const spc = "SPC (Supplementary Protection Certificates)";
+const spc = "SPCs (Supplementary Protection Certificates)";
 const umc = "Utility Models / Utility certificates OR International utility model application under the PCT (PCT application in the national phase)";
 const uma = "International utility model application under the PCT (PCT application in the national phase)";
 const tmk = "Trade Marks";
@@ -22,16 +22,31 @@ const utl_div = "divided utility model applications";
 const ind_app = "applications for industrial design";
 const ind_hag = "applications for industrial design through the Hague Agreement";
 const ind_div = "divided industrial design applications";
-const ind_nat = "Industrial designs (national line)";
-const ind_int = "Industrial designs (international line)";
+const ind_nat = ind + " (national line)";
+const ind_int = ind + " (international line)";
+const ind_reg = ind + " Registrations";
+const ind_rec = ind + " (Recordal)";
+const ind_inv = ind + " (Invalidation)";
 
 const geo_src = "geographical indication application: Indication of source";
 const geo_org = "geographical indication application: Appellation of origin";
 const geo_lis = "applications for geographical indication through the Lisbon Agreement";
 const geo_div = "divided geographical indication applications";
 
-const tmk_nat = "Trade marks (national line)";
-const tmk_int = "Trade marks (international line)";
+const tmk_nat = tmk + " (national line)";
+const tmk_int = tmk + " (international line)";
+const tmk_reg = tmk + " (Registration)";
+const tmk_opp = tmk + " (Opposition)";
+const tmk_rec = tmk + " (Recordal)";
+const tmk_can = tmk + " (Cancellation)";
+const tmk_apl = tmk + " (Appeal)";
+const tmk_ptl = tmk + " (PT-Logotype)";
+const tmk_esn = tmk + " (ES-Commercial name)";
+const tmk_ese = tmk + " (ES-Title of establishment)";
+
+const spc_ppp = spc + " for plant protection products";
+const spc_med = spc + " for medicinal products before 2008";
+const spc_bth = spc + "for both plant protection products and medicinal products from 2008 onwards"
 
 
 const austrian_pat = [AT, pat, /^a \d{3}\/\d{4}$/i];
@@ -134,6 +149,32 @@ const estonia_tmi_div = [EE, tmk_int + ' (divisional)', /^R\d{9}[A-Z]*$/i];
 const estonia_ini_div = [EE, ind_int + ' (divisional)', /^H\d{9}[A-Z]*$/i];
 const estonia_geo_div = [EE, geo_div, /^G\d{9}[A-Z]*$/i];
 
+const ohim_tmk = [EM, tmk, /^(EM)?(500000)?\d{9}$/i];
+const ohim_tmr = [EM, tmk_reg, /^(EM)?(510000)?\d{9}$/i];
+const ohim_tmo = [EM, tmk_opp, /^(EM)?(520000)?\d{9}$/i];
+const ohim_tmd = [EM, tmk_rec, /^(EM)?(530000)?\d{9}$/i];
+const ohim_tmc = [EM, tmk_can, /^(EM)?(540000)?\d{9}$/i];
+const ohim_tma = [EM, tmk_apl, /^(EM)?(550000)?\d{9}$/i];
+const ohim_tml = [EM, tmk_ptl, /^(EM)?(600000)?\d{9}$/i];
+const ohim_tmn = [EM, tmk_esn, /^(EM)?(610000)?\d{9}$/i];
+const ohim_tme = [EM, tmk_ese, /^(EM)?(620000)?\d{9}$/i];
+const ohim_ind = [EM, ind, /^(EM)?(700000)?\d{9}$/i];
+const ohim_idr = [EM, ind_reg, /^(EM)?(710000)?\d{9}$/i];
+const ohim_idi = [EM, ind_inv, /^(EM)?(720000)?\d{9}$/i];
+
+const eur_pat = [EP, pat, /^\d{8}(\.\d)?$/i];
+
+const spain_pat = [ES, pat, /^([P03]|ES)\d{9}$/i];
+const spain_pct = [ES, pat_pct, /^[P59]\d{9}|ES\d{9}U$/i];
+const spain_spc = [ES, spc, /^C\d{9}$/i];
+
+const finnish_pat = [FI, pat, /^\d{8}$/i]; // 20120001
+const finnish_med = [FI, spc_med, /^L\d{8}$/i];
+const finnish_pla = [FI, spc_ppp, /^K\d{8}$/i];
+const finnish_bth = [FI, spc_bth, /^C\d{8}$/i];
+const finnish_umc = [FI, umc, /^U\d{8}$/i];
+
+
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
 const bosnia_herz = [bosnia_herz_pat, bosnia_herz_tmk, bosnia_herz_ind];
@@ -191,6 +232,13 @@ const estonia = [
     estonia_ini_div,
     estonia_geo_div
 ];
+const ohim = [
+    ohim_tmk, ohim_tmr, ohim_tmo, ohim_tmd, ohim_tmc, ohim_tma, ohim_tml, ohim_tmn, ohim_tme,
+    ohim_ind, ohim_idr, ohim_idi
+];
+const europe = [eur_pat];
+const spain = [spain_pat, spain_pct, spain_spc];
+const finland = [finnish_pat, finnish_med, finnish_pla, finnish_bth, finnish_umc];
 
 const countries = [
     austria,
@@ -206,5 +254,9 @@ const countries = [
     czech,
     germany,
     eurasia,
-    estonia
+    estonia,
+    ohim,
+    europe,
+    spain,
+    finland
 ];

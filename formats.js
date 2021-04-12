@@ -32,6 +32,7 @@ const geo_src = "geographical indication application: Indication of source";
 const geo_org = "geographical indication application: Appellation of origin";
 const geo_lis = "applications for geographical indication through the Lisbon Agreement";
 const geo_div = "divided geographical indication applications";
+const geo_usr = "Users of geographical indications and designations of origin";
 
 const tmk_nat = tmk + " (national line)";
 const tmk_int = tmk + " (international line)";
@@ -174,6 +175,16 @@ const finnish_pla = [FI, spc_ppp, /^K\d{8}$/i];
 const finnish_bth = [FI, spc_bth, /^C\d{8}$/i];
 const finnish_umc = [FI, umc, /^U\d{8}$/i];
 
+const britain_pat = [GB, pat, /^\d{7}(\.\d)?$/i];
+
+const croatia_pat = [HR, pat + ' OR ' + pat_pct, /^P\d{8}[A-Z]$/i]; //P20110001A
+const croatia_tmk = [HR, tmk, /^Z\d{8}[A-Z]$/i];
+const croatia_ind = [HR, ind, /^$D\d{8}[A-Z]/i];
+const croatia_lay = [HR, lay, /^T\d{8}[A-Z]$/i];
+const croatia_geo = [HR, geo, /^G\d{8}[A-Z]$/i];
+const croatia_org = [HR, geo_usr, /^K\d{8}[A-Z]$/i];
+
+const ireland_pat = [IE, pat, /^\d{4}\/\d{4}$/i];
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -239,6 +250,9 @@ const ohim = [
 const europe = [eur_pat];
 const spain = [spain_pat, spain_pct, spain_spc];
 const finland = [finnish_pat, finnish_med, finnish_pla, finnish_bth, finnish_umc];
+const great_britain = [britain_pat];
+const croatia = [croatia_pat, croatia_tmk, croatia_ind, croatia_lay, croatia_geo, croatia_org];
+const ireland = [ireland_pat];
 
 const countries = [
     austria,
@@ -258,5 +272,8 @@ const countries = [
     ohim,
     europe,
     spain,
-    finland
+    finland,
+    great_britain,
+    croatia,
+    ireland
 ];

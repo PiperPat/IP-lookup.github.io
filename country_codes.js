@@ -251,3 +251,4 @@ const ZW = "Zimbabwe";
 const EA = "Eurasian Patent Office";
 const EM = "OHIM";
 const EP = "European Patent Office";
+const WO = "World Intellectual Property Organization";

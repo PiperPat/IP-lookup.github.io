@@ -58,6 +58,7 @@ const tmk_apl = tmk + " (Appeal)";
 const tmk_ptl = tmk + " (PT-Logotype)";
 const tmk_esn = tmk + " (ES-Commercial name)";
 const tmk_ese = tmk + " (ES-Title of establishment)";
+const tmk_ind = tmk + " or " + ind;
 
 const spc_ppp = spc + " for plant protection products";
 const spc_med = spc + " for medicinal products before 2008";
@@ -282,6 +283,9 @@ const ukraine_ind = [UA, ind, /^s\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_lay = [UA, lay, /^t\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_qog = [UA, qog, /^u\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 
+const wipo_pat = [WO, pat_pct, /^PCT\/IB[1,2][8,9,0]\d{2}\/\d{6}$/i];
+const wipo_tmk = [WO, tmk_ind, /^\d{9}$/i];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -352,6 +356,7 @@ const slovakia = [
     slovakia_org, slovakia_geo, slovakia_pto
 ];
 const ukraine = [ukraine_pat, ukraine_umc, ukraine_tmk, ukraine_ind, ukraine_lay, ukraine_qog];
+const wipo = [wipo_pat, wipo_tmk];
 
 const countries = [
     austria,
@@ -387,5 +392,6 @@ const countries = [
     russia,
     sweden,
     slovakia,
-    ukraine
+    ukraine,
+    wipo
 ];

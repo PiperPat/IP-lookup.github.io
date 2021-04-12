@@ -14,6 +14,7 @@ const pat_pct = "PCT applications";
 const pat_div = "divided patent applications";
 const pat_coa = "applications for certificates of addition";
 const pat_pla = "plant patents";
+const pat_app = "International patent applications under the PCT (PCT applications in the national phase)";
 
 const utl_pco = "applications filed by nationals and applications filed through Paris Convention";
 const utl_pct = "PCT applications";
@@ -184,7 +185,33 @@ const croatia_lay = [HR, lay, /^T\d{8}[A-Z]$/i];
 const croatia_geo = [HR, geo, /^G\d{8}[A-Z]$/i];
 const croatia_org = [HR, geo_usr, /^K\d{8}[A-Z]$/i];
 
-const ireland_pat = [IE, pat, /^\d{4}\/\d{4}$/i];
+const ireland_pat = [IE, pat, /^\d{4}\/\d{5}$/i];
+
+const israel_pat = [IL, pat, /^1\d{5}$/i];
+const israel_tmk = [IL, tmk, /^2\d{5}$/i];
+const israel_ind = [IL, ind, /^5\d{5}$/i];
+
+const italy_pat = [IT, pat, /^RM\d{4}A\d{6}$/i]; // RM2012A000123
+const italy_pla = [IT, pat_pla, /^RM\d{4}V\d{6}$/i];
+const italy_spc = [IT, spc, /^RM\d{4}P\d{6}$/i];
+const italy_umc = [IT, umc, /^RM\d{4}U\d{6}$/i];
+const italy_tmk = [IT, tmk, /^RM\d{4}C\d{6}$/i];
+const italy_ind = [IT, ind, /^RM\d{4}O\d{6}$/i];
+const italy_lay = [IT, lay, /^RM\d{4}S\d{6}$/i];
+
+const japan_all = [JP, pat + ', ' + pat_pct + ', ' + tmk + ', or ' + ind, /^\d{4}-?\d{6}?$/];
+
+const korea_pat = [KR, pat, /^10-\d{4}-\d{7}$/];
+const korea_umc = [KR, umc, /^20-\d{4}-\d{7}$/];
+const korea_ind = [KR, ind, /^30-\d{4}-\d{7}$/];
+const korea_tmk = [KR, tmk, /^40-\d{4}-\d{7}$/];
+
+const lithuania_pat = [LT, pat, /^\d{4}\s?\d{3}$/];
+const lithuania_tmk = [LT, tmk, /^\d{4}\s?\d{4}$/];
+const lithuania_spc = [LT, spc, /^PA\s?\d{4}\s?\d{3}$/];
+
+const moldova_pat = [MD, pat + ' or ' + pat_app, /^(md\s?)?a\s?\d{4}\s?\d{4}$/];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -224,24 +251,10 @@ const germany = [
 ];
 const eurasia = [eurasia_pat];
 const estonia = [
-    estonia_pat,
-    estonia_spc,
-    estonia_umc,
-    estonia_uma,
-    estonia_tmn,
-    estonia_inn,
-    estonia_tmi,
-    estonia_ini,
-    estonia_geo,
-    estonia_pat_div,
-    estonia_spc_div,
-    estonia_umc_div,
-    estonia_uma_div,
-    estonia_tmn_div,
-    estonia_inn_div,
-    estonia_tmi_div,
-    estonia_ini_div,
-    estonia_geo_div
+    estonia_pat, estonia_spc, estonia_umc, estonia_uma, estonia_tmn,
+    estonia_inn, estonia_tmi, estonia_ini, estonia_geo,
+    estonia_pat_div, estonia_spc_div, estonia_umc_div, estonia_uma_div, estonia_tmn_div,
+    estonia_inn_div, estonia_tmi_div, estonia_ini_div, estonia_geo_div
 ];
 const ohim = [
     ohim_tmk, ohim_tmr, ohim_tmo, ohim_tmd, ohim_tmc, ohim_tma, ohim_tml, ohim_tmn, ohim_tme,
@@ -253,6 +266,12 @@ const finland = [finnish_pat, finnish_med, finnish_pla, finnish_bth, finnish_umc
 const great_britain = [britain_pat];
 const croatia = [croatia_pat, croatia_tmk, croatia_ind, croatia_lay, croatia_geo, croatia_org];
 const ireland = [ireland_pat];
+const israel = [israel_pat, israel_tmk, israel_ind];
+const italy = [italy_pat, italy_pla, italy_spc, italy_umc, italy_tmk, italy_ind, italy_lay];
+const japan = [japan_all];
+const korea = [korea_pat, korea_tmk, korea_umc, korea_ind];
+const lithuania = [lithuania_pat, lithuania_spc, lithuania_tmk];
+const moldova = [moldova_pat];
 
 const countries = [
     austria,
@@ -275,5 +294,11 @@ const countries = [
     finland,
     great_britain,
     croatia,
-    ireland
+    ireland,
+    israel,
+    italy,
+    japan,
+    korea,
+    lithuania,
+    moldova
 ];

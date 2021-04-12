@@ -8,6 +8,7 @@ const lay = "Layout-design (topography) of integrated circuits";
 const pvc = "Certificates for new plants variety";
 const geo = "Geographical Indications";
 const msc = "Any type of IP (excluding trade marks)";
+const inn = "Innovation/simple/short-term/petty patent applications (Innovations)";
 
 const pat_pco = "applications filed by nationals and applications filed through Paris Convention";
 const pat_pct = "PCT applications";
@@ -15,10 +16,12 @@ const pat_div = "divided patent applications";
 const pat_coa = "applications for certificates of addition";
 const pat_pla = "plant patents";
 const pat_app = "International patent applications under the PCT (PCT applications in the national phase)";
+const pat_wiz = pat + " or " + pat_app;
 
 const utl_pco = "applications filed by nationals and applications filed through Paris Convention";
 const utl_pct = "PCT applications";
 const utl_div = "divided utility model applications";
+const umc_int = "International utility model applications under the PCT (PCT applications in the national phase)";
 
 const ind_app = "applications for industrial design";
 const ind_hag = "applications for industrial design through the Hague Agreement";
@@ -210,7 +213,34 @@ const lithuania_pat = [LT, pat, /^\d{4}\s?\d{3}$/];
 const lithuania_tmk = [LT, tmk, /^\d{4}\s?\d{4}$/];
 const lithuania_spc = [LT, spc, /^PA\s?\d{4}\s?\d{3}$/];
 
-const moldova_pat = [MD, pat + ' or ' + pat_app, /^(md\s?)?a\s?\d{4}\s?\d{4}$/];
+const moldova_pat = [MD, pat + ' or ' + pat_app, /^(md\s?)?a\s?\d{4}\s?\d{4}$/i];
+const moldova_inn = [MD, inn, /^(md\s?)?s\s?\d{4}\s?\d{4}$/i];
+const moldova_pla = [MD, pat_pla, /^(md\s?)?v\s?\d{4}\s?\d{4}$/i];
+const moldova_umc = [MD, umc, /^(md\s?)?u\s?\d{4}\s?\d{4}$/i];
+const moldova_ind = [MD, ind, /^(md\s?)?f\s?\d{4}\s?\d{4}$/i];
+const moldova_lay = [MD, lay, /^(md\s?)?t\s?\d{4}\s?\d{4}$/i];
+const moldova_tmk = [MD, tmk, /^(md\s?)?\d{6}$/i];
+
+const poland_pat = [PL, pat_wiz, /^(P\.)?\d{5,6}$/i];
+const poland_umc = [PL, umc, /^(W\.)?\d{5,6}$/i];
+const poland_tmk = [PL, tmk, /^(Z\.)?\d{5,6}$/i];
+const poland_ind = [PL, ind, /^(Wp\.)?\d{4,5}$/i];
+const poland_spc = [PL, spc, /^\d{4}\/\d{7}$/i];
+
+const romania_pat = [RO, pat_wiz, /^a\s?\d{4}\s?\d{5}$/i];
+const romania_umc = [RO, umc + ' or ' + umc_int, /^u\s?\d{4}\s?\d{5}$/i];
+const romania_tmk = [RO, tmk, /^M\s?\d{4}\s?\d{5}$/i];
+const romania_ind = [RO, ind, /^f\s?\d{4}\s?\d{4}$/i];
+const romania_spc = [RO, spc, /^$c\s?\d{4}\s?\d{3}/i];
+const romania_lay = [RO, lay, /^$t\s?\d{4}\s?\d{2}/i];
+
+const serbia_pat = [RS, pat_wiz, /^P-\d{4}\/\d{4}$/i];
+const serbia_inn = [RS, inn, /^MP-\d{4}\/\d{4}$/i];
+const serbia_tmk = [RS, tmk, /^Ж-\d{4}\/\d{4}$/i];
+const serbia_ind = [RS, ind, /^Д-\d{4}\/\d{4}$/i];
+const serbia_lay = [RS, lay, /^T-\d{4}\/\d{4}$/i];
+
+const russia_pat = [RU, pat, /^(RU)?\d{10}$/]; //2006100001
 
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
@@ -271,7 +301,11 @@ const italy = [italy_pat, italy_pla, italy_spc, italy_umc, italy_tmk, italy_ind,
 const japan = [japan_all];
 const korea = [korea_pat, korea_tmk, korea_umc, korea_ind];
 const lithuania = [lithuania_pat, lithuania_spc, lithuania_tmk];
-const moldova = [moldova_pat];
+const moldova = [moldova_pat, moldova_inn, moldova_pla, moldova_umc, moldova_ind, moldova_lay];
+const poland = [poland_pat, poland_umc, poland_tmk, poland_ind, poland_spc];
+const romania = [romania_pat, romania_umc, romania_tmk, romania_ind, romania_spc, romania_lay];
+const serbia = [serbia_pat, serbia_inn, serbia_tmk, serbia_ind, serbia_lay];
+const russia = [russia_pat];
 
 const countries = [
     austria,
@@ -300,5 +334,9 @@ const countries = [
     japan,
     korea,
     lithuania,
-    moldova
+    moldova,
+    poland,
+    romania,
+    serbia,
+    russia
 ];

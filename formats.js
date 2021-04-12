@@ -11,6 +11,7 @@ const msc = "Any type of IP (excluding trade marks)";
 const inn = "Innovation/simple/short-term/petty patent applications (Innovations)";
 const prg = "Computer programs";
 const dtb = "Databases";
+const qog = "Qualified indications of origin of goods";
 
 const pat_pco = "applications filed by nationals and applications filed through Paris Convention";
 const pat_pct = "PCT applications";
@@ -274,6 +275,13 @@ const slovakia_org = [SK, geo_app, /^(POP\s?)?\d{1}-[1,2][8,9,0]\d{2}$/i];
 const slovakia_geo = [SK, geo, /^(PZO\s?)?\d{1}-[1,2][8,9,0]\d{2}$/i];
 const slovakia_pto = [SK, lay, /^(PTO\s?)?\d{4}-[1,2][8,9,0]\d{2}$/i];
 
+const ukraine_pat = [UA, pat_wiz, /^a\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
+const ukraine_umc = [UA, umc, /^u\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
+const ukraine_tmk = [UA, tmk, /^m\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
+const ukraine_ind = [UA, ind, /^s\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
+const ukraine_lay = [UA, lay, /^t\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
+const ukraine_qog = [UA, qog, /^u\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -343,6 +351,7 @@ const slovakia = [
     slovakia_pat, slovakia_uma, slovakia_poz, slovakia_ind, slovakia_spc,
     slovakia_org, slovakia_geo, slovakia_pto
 ];
+const ukraine = [ukraine_pat, ukraine_umc, ukraine_tmk, ukraine_ind, ukraine_lay, ukraine_qog];
 
 const countries = [
     austria,
@@ -377,5 +386,6 @@ const countries = [
     serbia,
     russia,
     sweden,
-    slovakia
+    slovakia,
+    ukraine
 ];

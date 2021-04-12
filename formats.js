@@ -1,7 +1,6 @@
 const pat = "Patents";
 const spc = "SPCs (Supplementary Protection Certificates)";
-const umc = "Utility Models / Utility certificates OR International utility model application under the PCT (PCT application in the national phase)";
-const uma = "International utility model application under the PCT (PCT application in the national phase)";
+const umc = "Utility Models";
 const tmk = "Trade Marks";
 const ind = "Industrial designs";
 const lay = "Layout-design (topography) of integrated circuits";
@@ -21,6 +20,7 @@ const pat_pla = "plant patents";
 const pat_app = "International patent applications under the PCT (PCT applications in the national phase)";
 const pat_wiz = pat + " or " + pat_app;
 const pat_prv = "Provisional patent applications (Provisional patents)";
+const pat_pcn = pat + " and " + pat_pct;
 // swedish patents
 const pat_se0 = "national patent application submitted on paper";
 const pat_se3 = "national patent application submitted via online service Swedish Patent Application (web Online Filing)";
@@ -28,10 +28,11 @@ const pat_se5 = "national patent application submitted via online service Online
 const pat_se7 = "limitation of patent";
 const pat_se9 = "SPCs submitted on paper";
 
-const utl_pco = "applications filed by nationals and applications filed through Paris Convention";
-const utl_pct = "PCT applications";
-const utl_div = "divided utility model applications";
+const utl_pco = umc + " (applications filed by nationals and applications filed through Paris Convention)";
+const utl_pct = umc + " (PCT applications)";
+const utl_div = umc + " (divided utility model applications)";
 const umc_int = "International utility model applications under the PCT (PCT applications in the national phase)";
+const umc_ori = umc + " or " + umc_int;
 
 const ind_app = "applications for industrial design";
 const ind_hag = "applications for industrial design through the Hague Agreement";
@@ -63,8 +64,19 @@ const tmk_ind = tmk + " or " + ind;
 
 const spc_ppp = spc + " for plant protection products";
 const spc_med = spc + " for medicinal products before 2008";
-const spc_bth = spc + "for both plant protection products and medicinal products from 2008 onwards";
+const spc_bth = spc + " for both plant protection products and medicinal products from 2008 onwards";
+const spc_div = spc + " (divisional)";
 
+const umc_div = umc + ' (divisional)';
+const umc_idv = umc_int + ' (divisional)';
+const tmk_ndv = tmk_nat + ' (divisional)';
+const ind_ndv = ind_nat + ' (divisional)';
+const tmi_div = tmk_int + ' (divisional)';
+const ind_idv = ind_int + ' (divisional)';
+
+const all = pat + ', ' + pat_pct + ', ' + tmk + ', or ' + ind;
+const can = pat + ", " + pat_pct + ", " + tmk;
+const pat_ru1 = pat_wiz + ' or ' + umc_int;
 
 const austrian_pat = [AT, pat, /^a \d{3}\/\d{4}$/i];
 const austrian_spc = [AT, spc, /^sz \d{3}\/\d{4}$/i];
@@ -111,7 +123,7 @@ const brazil_geo_3 = [BR, geo_lis, /^(BR\s)?42\d{10}$/i];
 const brazil_geo_4 = [BR, geo_div, /^(BR\s)?43\d{10}$/i];
 const brazil_tmk = [BR, tmk, /^\d{9}$/i];
 
-const belarus_pat = [BY, pat + " and " + pat_pct, /^a\s?\d{8}$/i];
+const belarus_pat = [BY, pat_pcn, /^a\s?\d{8}$/i];
 const belarus_pct = [BY, pat_pla, /^v\s?\d{8}$/i];
 const belarus_umc = [BY, umc, /^u\s?\d{8}$/i];
 const belarus_ind = [BY, ind, /^f\s?\d{8}$/i];
@@ -119,7 +131,7 @@ const belarus_lay = [BY, lay, /^t\s?\d{8}$/i];
 const belarus_geo = [BY, geo, /^g\s?\d{8}$/i];
 const belarus_tmk = [BY, tmk, /^\d{8}$/i];
 
-const canada_pat = [CA, pat + ", " + pat_pct + ", " + tmk, /^(CA )?\d{7}$/i];
+const canada_pat = [CA, can, /^(CA )?\d{7}$/i];
 const canada_ind = [CA, ind, /^(CA )?\d{6}$/i];
 
 const china_pat = [CN, pat, /^\d{4}1\d{7}\.\d$/i];
@@ -130,7 +142,7 @@ const china_ind = [CN, ind, /^\d{4}3\d{7}\.\d$/i];
 const costa_rica_msc = [CR, msc, /^\d{4}-\d$/i];
 const costa_rica_tmk = [CR, tmk, /^\d{4}-\d{4}$/i];
 
-const czech_pat = [CZ, pat + ", " + pat_pct, /^(PV|CZ)\s?\d{4}-\d{1,10}$/i];
+const czech_pat = [CZ, pat_wiz, /^(PV|CZ)\s?\d{4}-\d{1,10}$/i];
 const czech_umcA = [CZ, umc, /^PUV\s?\d{4}-\d{1,10}$/i];
 const czech_umcB = [CZ, umc, /^CZ\s?\d{4}-\d{1,10}\s?U$/i];
 const czech_ind = [CZ, ind, /^PVZ\s?\d{4}-\d{1,10}$/i];
@@ -144,7 +156,7 @@ const germany_pat = [DE, pat, /^10\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 const germany_pct = [DE, pat_pct, /^11\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 const germany_spc = [DE, spc, /^12\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 const germany_umc = [DE, umc, /^20\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
-const germany_uma = [DE, uma, /^21\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
+const germany_uma = [DE, umc_int, /^21\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 const germany_lay = [DE, lay, /^22\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 const germany_tmk = [DE, tmk, /^30\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 const germany_geo = [DE, geo, /^31\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
@@ -155,20 +167,20 @@ const eurasia_pat = [EA, pat, /^(EA\s?)?\d{9}$/];
 const estonia_pat = [EE, pat, /^P\d{9}$/i];
 const estonia_spc = [EE, spc, /^C\d{9}$/i];
 const estonia_umc = [EE, umc, /^U\d{9}$/i];
-const estonia_uma = [EE, uma, /^P\d{9}$/i];
+const estonia_uma = [EE, umc_int, /^P\d{9}$/i];
 const estonia_tmn = [EE, tmk_nat, /^M\d{9}$/i];
 const estonia_inn = [EE, ind_nat, /^D\d{9}$/i];
 const estonia_tmi = [EE, tmk_int, /^R\d{9}$/i];
 const estonia_ini = [EE, ind_int, /^H\d{9}$/i];
 const estonia_geo = [EE, geo, /^G\d{9}$/i];
 const estonia_pat_div = [EE, pat_div, /^P\d{9}[A-Z]*$/i];
-const estonia_spc_div = [EE, spc + ' (divisional)', /^C\d{9}[A-Z]*$/i];
-const estonia_umc_div = [EE, umc + ' (divisional)', /^U\d{9}[A-Z]*$/i];
-const estonia_uma_div = [EE, uma + ' (divisional)', /^P\d{9}[A-Z]*$/i];
-const estonia_tmn_div = [EE, tmk_nat + ' (divisional)', /^M\d{9}[A-Z]*$/i];
-const estonia_inn_div = [EE, ind_nat + ' (divisional)', /^D\d{9}[A-Z]*$/i];
-const estonia_tmi_div = [EE, tmk_int + ' (divisional)', /^R\d{9}[A-Z]*$/i];
-const estonia_ini_div = [EE, ind_int + ' (divisional)', /^H\d{9}[A-Z]*$/i];
+const estonia_spc_div = [EE, spc_div, /^C\d{9}[A-Z]*$/i];
+const estonia_umc_div = [EE, umc_div, /^U\d{9}[A-Z]*$/i];
+const estonia_uma_div = [EE, umc_idv, /^P\d{9}[A-Z]*$/i];
+const estonia_tmn_div = [EE, tmk_ndv, /^M\d{9}[A-Z]*$/i];
+const estonia_inn_div = [EE, ind_ndv, /^D\d{9}[A-Z]*$/i];
+const estonia_tmi_div = [EE, tmi_div, /^R\d{9}[A-Z]*$/i];
+const estonia_ini_div = [EE, ind_idv, /^H\d{9}[A-Z]*$/i];
 const estonia_geo_div = [EE, geo_div, /^G\d{9}[A-Z]*$/i];
 
 const ohim_tmk = [EM, tmk, /^(EM)?(500000)?\d{9}$/i];
@@ -198,7 +210,7 @@ const finnish_umc = [FI, umc, /^U\d{8}$/i];
 
 const britain_pat = [GB, pat, /^\d{7}(\.\d)?$/i];
 
-const croatia_pat = [HR, pat + ' OR ' + pat_pct, /^P\d{8}[A-Z]$/i]; //P20110001A
+const croatia_pat = [HR, pat_wiz, /^P\d{8}[A-Z]$/i]; //P20110001A
 const croatia_tmk = [HR, tmk, /^Z\d{8}[A-Z]$/i];
 const croatia_ind = [HR, ind, /^$D\d{8}[A-Z]/i];
 const croatia_lay = [HR, lay, /^T\d{8}[A-Z]$/i];
@@ -219,7 +231,7 @@ const italy_tmk = [IT, tmk, /^RM\d{4}C\d{6}$/i];
 const italy_ind = [IT, ind, /^RM\d{4}O\d{6}$/i];
 const italy_lay = [IT, lay, /^RM\d{4}S\d{6}$/i];
 
-const japan_all = [JP, pat + ', ' + pat_pct + ', ' + tmk + ', or ' + ind, /^\d{4}-?\d{6}?$/];
+const japan_all = [JP, all, /^\d{4}-?\d{6}?$/];
 
 const korea_pat = [KR, pat, /^10-\d{4}-\d{7}$/];
 const korea_umc = [KR, umc, /^20-\d{4}-\d{7}$/];
@@ -230,7 +242,7 @@ const lithuania_pat = [LT, pat, /^\d{4}\s?\d{3}$/];
 const lithuania_tmk = [LT, tmk, /^\d{4}\s?\d{4}$/];
 const lithuania_spc = [LT, spc, /^PA\s?\d{4}\s?\d{3}$/];
 
-const moldova_pat = [MD, pat + ' or ' + pat_app, /^(md\s?)?a\s?\d{4}\s?\d{4}$/i];
+const moldova_pat = [MD, pat_wiz, /^(md\s?)?a\s?\d{4}\s?\d{4}$/i];
 const moldova_inn = [MD, inn, /^(md\s?)?s\s?\d{4}\s?\d{4}$/i];
 const moldova_pla = [MD, pat_pla, /^(md\s?)?v\s?\d{4}\s?\d{4}$/i];
 const moldova_umc = [MD, umc, /^(md\s?)?u\s?\d{4}\s?\d{4}$/i];
@@ -245,7 +257,7 @@ const poland_ind = [PL, ind, /^(Wp\.)?\d{4,5}$/i];
 const poland_spc = [PL, spc, /^\d{4}\/\d{7}$/i];
 
 const romania_pat = [RO, pat_wiz, /^a\s?\d{4}\s?\d{5}$/i];
-const romania_umc = [RO, umc + ' or ' + umc_int, /^u\s?\d{4}\s?\d{5}$/i];
+const romania_umc = [RO, umc_ori, /^u\s?\d{4}\s?\d{5}$/i];
 const romania_tmk = [RO, tmk, /^M\s?\d{4}\s?\d{5}$/i];
 const romania_ind = [RO, ind, /^f\s?\d{4}\s?\d{4}$/i];
 const romania_spc = [RO, spc, /^$c\s?\d{4}\s?\d{3}/i];
@@ -257,7 +269,7 @@ const serbia_tmk = [RS, tmk, /^Ж-\d{4}\/\d{4}$/i]; // doesn't work
 const serbia_ind = [RS, ind, /^Д-\d{4}\/\d{4}$/i]; // doesn't work
 const serbia_lay = [RS, lay, /^T-\d{4}\/\d{4}$/i];
 
-const russia_pat = [RU, pat_wiz + ' or ' + umc_int, /^(RU)?\d{4}[1-4]\d{5}$/]; //2006100001 YYYYTNNNNN
+const russia_pat = [RU, pat_ru1, /^(RU)?\d{4}[1-4]\d{5}$/]; //2006100001 YYYYTNNNNN
 const russia_ind = [RU, ind, /^(RU)?\d{4}[5-6]\d{5}$/];
 const russia_tmk = [RU, tmk, /^(RU)?\d{4}[7-9]\d{5}$/];
 const russia_lay = [RU, lay, /^(RU)?\d{4}63\d{4}$/];
@@ -274,7 +286,7 @@ const sweden_pat7 = [SE, pat_se7, /^\d{2}7\d{4}-\d$/i];
 const sweden_pat9 = [SE, pat_se9, /^\d{2}9\d{4}-\d$/i];
 
 const slovakia_pat = [SK, pat_wiz, /^(PP\s?)?\d{5}-[1,2][8,9,0]\d{2}$/i];
-const slovakia_uma = [SK, uma, /^(PUV\s?)?\d{5}-[1,2][8,9,0]\d{2}(\s?U)?$/i];
+const slovakia_uma = [SK, umc_int, /^(PUV\s?)?\d{5}-[1,2][8,9,0]\d{2}(\s?U)?$/i];
 const slovakia_poz = [SK, tmk, /^(POZ\s?)?\d{4}-[1,2][8,9,0]\d{2}$/i];
 const slovakia_ind = [SK, ind, /^(PD\s?)?\d{2}-[1,2][8,9,0]\d{2}$/i];
 const slovakia_spc = [SK, spc, /^(PDO\s?)?\d{4}-[1,2][8,9,0]\d{2}$/i];

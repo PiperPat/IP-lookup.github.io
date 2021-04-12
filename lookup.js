@@ -8,8 +8,20 @@ function lookup() {
 
     let e = document.getElementById('filter');
     let filter = e.value;
-
-    alert('searching by ' + filter);
+    switch (filter) {
+        case 'pat':
+            filter = filters.pat;
+            break;
+        case 'tmk':
+            filter = filters.tmk;
+            break;
+        case 'ind':
+            filter = filters.ind;
+            break;
+        case 'oth':
+            filter = filters.oth;
+            break;
+    }
 
     let query = document.getElementById("mystery-string").value;
     let found_match = false;
@@ -19,7 +31,7 @@ function lookup() {
         country.forEach(type => {
             let regex = type[2];
             if (regex.test(query)) {
-                if (result[1] == filter || filter == "all") results.push(type[0] + ": " + type[1]);
+                if (filter.includes(type[1]) || filter == "all") results.push(type[0] + ": " + type[1]);
                 found_match = true;
             }
         });
@@ -34,5 +46,4 @@ function lookup() {
         });
         document.getElementById('result').innerHTML = html;
     }
-
 }

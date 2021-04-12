@@ -9,6 +9,8 @@ const pvc = "Certificates for new plants variety";
 const geo = "Geographical Indications";
 const msc = "Any type of IP (excluding trade marks)";
 const inn = "Innovation/simple/short-term/petty patent applications (Innovations)";
+const prg = "Computer programs";
+const dtb = "Databases";
 
 const pat_pco = "applications filed by nationals and applications filed through Paris Convention";
 const pat_pct = "PCT applications";
@@ -17,6 +19,12 @@ const pat_coa = "applications for certificates of addition";
 const pat_pla = "plant patents";
 const pat_app = "International patent applications under the PCT (PCT applications in the national phase)";
 const pat_wiz = pat + " or " + pat_app;
+// swedish patents
+const pat_se0 = "national patent application submitted on paper";
+const pat_se3 = "national patent application submitted via online service Swedish Patent Application (web Online Filing)";
+const pat_se5 = "national patent application submitted via online service Online Filing (epoline Online Filing (eOLF))";
+const pat_se7 = "limitation of patent";
+const pat_se9 = "SPCs submitted on paper";
 
 const utl_pco = "applications filed by nationals and applications filed through Paris Convention";
 const utl_pct = "PCT applications";
@@ -236,11 +244,24 @@ const romania_lay = [RO, lay, /^$t\s?\d{4}\s?\d{2}/i];
 
 const serbia_pat = [RS, pat_wiz, /^P-\d{4}\/\d{4}$/i];
 const serbia_inn = [RS, inn, /^MP-\d{4}\/\d{4}$/i];
-const serbia_tmk = [RS, tmk, /^Ж-\d{4}\/\d{4}$/i];
-const serbia_ind = [RS, ind, /^Д-\d{4}\/\d{4}$/i];
+const serbia_tmk = [RS, tmk, /^Ж-\d{4}\/\d{4}$/i]; // doesn't work
+const serbia_ind = [RS, ind, /^Д-\d{4}\/\d{4}$/i]; // doesn't work
 const serbia_lay = [RS, lay, /^T-\d{4}\/\d{4}$/i];
 
-const russia_pat = [RU, pat, /^(RU)?\d{10}$/]; //2006100001
+const russia_pat = [RU, pat_wiz + ' or ' + umc_int, /^(RU)?\d{4}[1-4]\d{5}$/]; //2006100001 YYYYTNNNNN
+const russia_ind = [RU, ind, /^(RU)?\d{4}[5-6]\d{5}$/];
+const russia_tmk = [RU, tmk, /^(RU)?\d{4}[7-9]\d{5}$/];
+const russia_lay = [RU, lay, /^(RU)?\d{4}63\d{4}$/];
+const russia_prg = [RU, prg, /^(RU)?\d{4}(61|66)\d{4}$/];
+const russia_dtb = [RU, dtb, /^(RU)?\d{4}62\d{4}$/];
+
+const sweden_tmk = [SE, tmk, /^\d{4}\/\d{5}$/i];
+const sweden_ind = [SE, ind, /^\d{4}\/\d{4}$/i];
+const sweden_pat0 = [SE, pat_se0, /^\d{2}0\d{4}-\d$/i];
+const sweden_pat3 = [SE, pat_se3, /^\d{2}3\d{4}-\d$/i];
+const sweden_pat5 = [SE, pat_se5, /^\d{2}5\d{4}-\d$/i];
+const sweden_pat7 = [SE, pat_se7, /^\d{2}7\d{4}-\d$/i];
+const sweden_pat9 = [SE, pat_se9, /^\d{2}9\d{4}-\d$/i];
 
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
@@ -305,7 +326,8 @@ const moldova = [moldova_pat, moldova_inn, moldova_pla, moldova_umc, moldova_ind
 const poland = [poland_pat, poland_umc, poland_tmk, poland_ind, poland_spc];
 const romania = [romania_pat, romania_umc, romania_tmk, romania_ind, romania_spc, romania_lay];
 const serbia = [serbia_pat, serbia_inn, serbia_tmk, serbia_ind, serbia_lay];
-const russia = [russia_pat];
+const russia = [russia_pat, russia_ind, russia_tmk, russia_lay, russia_prg, russia_dtb];
+const sweden = [sweden_tmk, sweden_ind, sweden_pat0, sweden_pat3, sweden_pat5, sweden_pat7, sweden_pat9];
 
 const countries = [
     austria,
@@ -338,5 +360,6 @@ const countries = [
     poland,
     romania,
     serbia,
-    russia
+    russia,
+    sweden
 ];

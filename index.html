@@ -3,11 +3,28 @@
 <head>
     <script src='country_codes.js'></script>
     <script src='formats.js'></script>
+    <script src='filters.js'></script>
     <script src='lookup.js'></script>
 </head>
 <body>
+    <img src="http://wwwattorneys.piperpat.com/Portals/10/PipersRed.jpg" style='margin-bottom: 50px'>
+    <br>
     <label for="mystery-string">Enter IP number:</label>
-    <input type="text" id="mystery-string" name="mystery-string" onchange="lookup()">
+    <input type="text" id="mystery-string" name="mystery-string">
+    <label>IP type</label>
+    <select name='filter' id='filter'>
+        <option value='all' selected disabled hidden>select search filter</option>
+        <option value='all'>none</option>
+        <option value='pat'>patent</option>
+        <option value='tmk'>trademark</option>
+        <option value='utm'>utility model</option>
+        <option value='ind'>industrial designs</option>
+        <option value='cir'>integrated circuits</option>
+        <option value='pla'>plant variety</option>
+        <option value='geo'>geographical</option>
+        <option value='oth'>other</option>
+    </select>
+    <button onclick="lookup()">look up</button>
     <br>
     <p id='result'></p>
 </body>

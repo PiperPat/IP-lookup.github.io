@@ -20,6 +20,7 @@ const pat_coa = "applications for certificates of addition";
 const pat_pla = "plant patents";
 const pat_app = "International patent applications under the PCT (PCT applications in the national phase)";
 const pat_wiz = pat + " or " + pat_app;
+const pat_prv = "Provisional patent applications (Provisional patents)";
 // swedish patents
 const pat_se0 = "national patent application submitted on paper";
 const pat_se3 = "national patent application submitted via online service Swedish Patent Application (web Online Filing)";
@@ -62,7 +63,7 @@ const tmk_ind = tmk + " or " + ind;
 
 const spc_ppp = spc + " for plant protection products";
 const spc_med = spc + " for medicinal products before 2008";
-const spc_bth = spc + "for both plant protection products and medicinal products from 2008 onwards"
+const spc_bth = spc + "for both plant protection products and medicinal products from 2008 onwards";
 
 
 const austrian_pat = [AT, pat, /^a \d{3}\/\d{4}$/i];
@@ -73,6 +74,11 @@ const austrian_ind = [AT, ind, /^mu \d{3}\/\d{4}$/i];
 const austrian_lay = [AT, lay, /^hl \d{3}\/\d{4}$/i];
 
 const australian_pat = [AU, pat, /^\d{10}$/i];
+const australia_pat_def = [AU, pat_wiz, /^[1,2][8,9,0]\d{2}[2-7]\d{5}$/];
+const australia_pat_prv = [AU, pat_prv, /^[1,2][8,9,0]\d{2}[9]\d{5}$/];
+const australia_pat_inn = [AU, inn, /^[1,2][8,9,0]\d{2}[1]\d{5}$/];
+
+
 const australian_tmk = [AU, tmk, /^\d{7}$/i];
 const australian_ind = [AU, ind, /^\d{9}$/i];
 
@@ -258,7 +264,7 @@ const russia_lay = [RU, lay, /^(RU)?\d{4}63\d{4}$/];
 const russia_prg = [RU, prg, /^(RU)?\d{4}(61|66)\d{4}$/];
 const russia_dtb = [RU, dtb, /^(RU)?\d{4}62\d{4}$/];
 
-// from this point, I've started using year regex properly
+// from this point, I've started using YEAR regex properly
 const sweden_tmk = [SE, tmk, /^[1,2][8,9,0]\d{2}\/\d{5}$/i];
 const sweden_ind = [SE, ind, /^[1,2][8,9,0]\d{2}\/\d{4}$/i];
 const sweden_pat0 = [SE, pat_se0, /^\d{2}0\d{4}-\d$/i];

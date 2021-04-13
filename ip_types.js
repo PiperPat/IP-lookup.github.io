@@ -55,8 +55,12 @@ const pat_old = pat + " (old numbering system)";
 const pat_new = pat + " (new numbering system)";
 const pat_fr1 = "Patent applications prior to January 1969";
 const pat_gb1 = "Numbering system according to the old 1949 Patents Act";
-const pat_hu1 = "Hungarian patent (application from 1980-1992)";
-const pat_id1 = "Simple Patent application";
+const pat_hu1 = "Hungarian patents (application from 1980-1992)";
+const pat_id1 = "Simple Patent applications";
+const pat_ie1 = "Patent applications (this numbering system was used until the end of 1991)";
+const pat_ie2 = "Patent applications - Numbering system applied from January 1, 1992, to December 31, 1999."
+const pat_ie3 = "Short-term applications - Numbering system applied from January 1, 1992, to December 31, 1999.";
+const pat_ie4 = "Short-term applications";
 
 const utl_pco = umc + " (applications filed by nationals and applications filed through Paris Convention)";
 const utl_pct = umc + " (PCT applications)";

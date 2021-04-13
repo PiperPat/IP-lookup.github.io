@@ -138,7 +138,7 @@ const croatia_lay = [HR, lay, /^T\d{8}[A-Z]$/i];
 const croatia_geo = [HR, geo, /^G\d{8}[A-Z]$/i];
 const croatia_org = [HR, geo_usr, /^K\d{8}[A-Z]$/i];
 
-const ireland_pat = [IE, pat, /^\d{4}\/\d{5}$/i];
+const ireland_pat = [IE, pat, /^[1,2][8,9,0]\d{2}\/\d{4}$/];
 
 const israel_pat = [IL, pat, /^1\d{5}$/i];
 const israel_tmk = [IL, tmk, /^2\d{5}$/i];
@@ -286,6 +286,11 @@ const indonesia_pat = [ID, pat, /^P00[1,2][8,9,0]\d{2}\d{5}$/]; //P00200300001
 const indonesia_sim = [ID, pat_id1, /^S00[1,2][8,9,0]\d{2}\d{5}$/];
 const indonesia_pct = [ID, pat_pct, /^W00[1,2][8,9,0]\d{2}\d{5}$/];
 
+const irish_old_pat = [IE, pat_ie1, /^\d{4}\/\d{2}$/];
+const irish_mid_pat = [IE, pat_ie2, /^\d{6}$/];
+const irish_msh_pat = [IE, pat_ie3, /^S\d{6}$/];
+const irish_nsh_pat = [IE, pat_ie4, /^S[1,2][8,9,0]\d{2}\/\d{4}$/];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -345,7 +350,7 @@ const spain = [spain_pat, spain_pct, spain_spc];
 const finland = [finnish_pat, finnish_med, finnish_pla, finnish_bth, finnish_umc];
 const great_britain = [britain_pat, britain_old_pat];
 const croatia = [croatia_pat, croatia_tmk, croatia_ind, croatia_lay, croatia_geo, croatia_org];
-const ireland = [ireland_pat];
+const ireland = [ireland_pat, irish_old_pat, irish_mid_pat, irish_msh_pat, irish_nsh_pat];
 const israel = [israel_pat, israel_tmk, israel_ind];
 const italy = [italy_pat, italy_pla, italy_spc, italy_umc, italy_tmk, italy_ind, italy_lay];
 const japan = [japan_all];

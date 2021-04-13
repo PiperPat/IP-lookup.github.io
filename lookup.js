@@ -1,3 +1,13 @@
+/**
+ *      Author: Anton Huggard
+ *      Date: Apr, 2021
+ * 
+ *      Notes: Main JS file for this project, there's a simple forEach
+ *      that loops through every country/ip-type to see if a search
+ *      query matches any known ip numbering formats.
+ *      Dependent on: formats.js, ip_type.js, filters.js
+ */
+
 document.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         lookup();

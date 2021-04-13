@@ -84,15 +84,16 @@ const germany_ind = [DE, ind, /^40\s?\d{4}\s?\d{3}\s?\d{3}\.\d$/i];
 
 const eurasia_pat = [EA, pat, /^(EA\s?)?\d{9}$/];
 
-const estonia_pat = [EE, pat, /^P\d{9}$/i];
-const estonia_spc = [EE, spc, /^C\d{9}$/i];
-const estonia_umc = [EE, umc, /^U\d{9}$/i];
-const estonia_uma = [EE, umc_int, /^P\d{9}$/i];
-const estonia_tmn = [EE, tmk_nat, /^M\d{9}$/i];
-const estonia_inn = [EE, ind_nat, /^D\d{9}$/i];
-const estonia_tmi = [EE, tmk_int, /^R\d{9}$/i];
-const estonia_ini = [EE, ind_int, /^H\d{9}$/i];
-const estonia_geo = [EE, geo, /^G\d{9}$/i];
+// estonia now using proper year regex -- [1,2][8,9,0]\d{2}
+const estonia_pat = [EE, pat, /^P[1,2][8,9,0]\d{2}\d{5}$/i];
+const estonia_spc = [EE, spc, /^C[1,2][8,9,0]\d{2}\d{5}$/i];
+const estonia_umc = [EE, umc, /^U[1,2][8,9,0]\d{2}\d{5}$/i];
+const estonia_uma = [EE, umc_int, /^P[1,2][8,9,0]\d{2}\d{5}$/i];
+const estonia_tmn = [EE, tmk_nat, /^M[1,2][8,9,0]\d{2}\d{5}$/i];
+const estonia_inn = [EE, ind_nat, /^D[1,2][8,9,0]\d{2}\d{5}$/i];
+const estonia_tmi = [EE, tmk_int, /^R[1,2][8,9,0]\d{2}\d{5}$/i];
+const estonia_ini = [EE, ind_int, /^H[1,2][8,9,0]\d{2}\d{5}$/i];
+const estonia_geo = [EE, geo, /^G[1,2][8,9,0]\d{2}\d{5}$/i];
 const estonia_pat_div = [EE, pat_div, /^P\d{9}[A-Z]*$/i];
 const estonia_spc_div = [EE, spc_div, /^C\d{9}[A-Z]*$/i];
 const estonia_umc_div = [EE, umc_div, /^U\d{9}[A-Z]*$/i];
@@ -260,6 +261,14 @@ const germany_old_epf = [DE, pat_de4, /^6\d{2}\s\d{2}\s\d{3}(\.\d)?$/];
 
 const denmark_pat = [DK, pat_dk1, /^\d{4}\/\d{2}$/];
 const denmark_uma = [DK, pat_dk2, /^\d{7}\sU$/]; // 9500242 U
+const denmark_pa2 = [DK, pat, /^(PA\s)?[1,2][8,9,0]\d{2}\s\d{5}$/];
+const denmark_um2 = [DK, uma, /^(BA\s)?[1,2][8,9,0]\d{2}\s\d{5}(\sU)?$/];
+
+const ecuador_pat = [EC, pat, /^(SP\s)?\d\d(-|\/)\d{4}$/];
+const ecuador_uma = [EC, uma, /^(SMU\.\s)?\d\d-\d{3}(\sU)?$/];
+
+const egypt_pat_old = [EG, pat_old, /^\d{3}\/\d\d$/];
+const egypt_pat_new = [EG, pat_new, /^[1,2][8,9,0]\d{2}\d{6}$/]; //1996010001
 
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
@@ -345,7 +354,9 @@ const azerbaijan = [azerbaijan_mys, azerbaijan_pat, azerbaijan_uma];
 const switzerland = [switzerland_app];
 const czechoslovakia = [czechoslovakia_pat];
 const cuba = [cuba_pat];
-const denmark = [denmark_pat, denmark_uma];
+const denmark = [denmark_pat, denmark_uma, denmark_pa2, denmark_um2];
+const ecuador = [ecuador_pat, ecuador_uma];
+const egypt = [egypt_pat_new, egypt_pat_old];
 
 const countries = [
     austria,
@@ -389,5 +400,7 @@ const countries = [
     switzerland,
     czechoslovakia,
     cuba,
-    denmark
+    denmark,
+    ecuador,
+    egypt
 ];

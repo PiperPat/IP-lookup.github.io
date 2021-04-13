@@ -51,6 +51,8 @@ const pat_de3 = "Patents granted by the EPO, filed in German (used for applicati
 const pat_de4 = "Patents granted by the EPO, filed in English or French (used for applications filed with the EPO as of 1989).";
 const pat_dk1 = "Patent applications (used until the end of 1997)";
 const pat_dk2 = "Utility model applications (used until the end of 1997)";
+const pat_old = pat + " (old numbering system)";
+const pat_new = pat + " (new numbering system)";
 
 const utl_pco = umc + " (applications filed by nationals and applications filed through Paris Convention)";
 const utl_pct = umc + " (PCT applications)";

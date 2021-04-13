@@ -53,6 +53,10 @@ const pat_dk1 = "Patent applications (used until the end of 1997)";
 const pat_dk2 = "Utility model applications (used until the end of 1997)";
 const pat_old = pat + " (old numbering system)";
 const pat_new = pat + " (new numbering system)";
+const pat_fr1 = "Patent applications prior to January 1969";
+const pat_gb1 = "Numbering system according to the old 1949 Patents Act";
+const pat_hu1 = "Hungarian patent (application from 1980-1992)";
+const pat_id1 = "Simple Patent application";
 
 const utl_pco = umc + " (applications filed by nationals and applications filed through Paris Convention)";
 const utl_pct = umc + " (PCT applications)";

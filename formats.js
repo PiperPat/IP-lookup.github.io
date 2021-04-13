@@ -131,7 +131,7 @@ const finnish_umc = [FI, umc, /^U\d{8}$/i];
 
 const britain_pat = [GB, pat, /^\d{7}(\.\d)?$/i];
 
-const croatia_pat = [HR, pat_wiz, /^P\d{8}[A-Z]$/i]; //P20110001A
+const croatia_pat = [HR, pat_wiz, /^P\s?\d{8}\s[A-Z]$/i]; //P20110001A
 const croatia_tmk = [HR, tmk, /^Z\d{8}[A-Z]$/i];
 const croatia_ind = [HR, ind, /^$D\d{8}[A-Z]/i];
 const croatia_lay = [HR, lay, /^T\d{8}[A-Z]$/i];
@@ -270,6 +270,22 @@ const ecuador_uma = [EC, uma, /^(SMU\.\s)?\d\d-\d{3}(\sU)?$/];
 const egypt_pat_old = [EG, pat_old, /^\d{3}\/\d\d$/];
 const egypt_pat_new = [EG, pat_new, /^[1,2][8,9,0]\d{2}\d{6}$/]; //1996010001
 
+const france_ancien_systeme = [FR, pat_fr1, /^\d\d\.\d{5}$/];
+const france_nouvelle_systeme = [FR, pat, /^\d\d\s\d{5}$/]; // liberte fraternite egalite
+
+const britain_old_pat = [GB, pat_gb1, /^\d{5}\/\d\d$/];
+
+const greece_pat = [GR, pat, /^\d{2}01\d{5}$/];
+const greece_uma = [GR, uma, /^\d{2}02\d{5}(\sU)?$/];
+
+const hungary_pat_old = [HU, pat_hu1, /^\d{2}\s\d{2}\/\d{2}$/];
+const hungary_pat_new = [HU, pat, /^(P\s)?\d{7}$/];
+const hungary_uma = [HU, uma, /^(U\s)?\d{7}(\sU)?$/];
+
+const indonesia_pat = [ID, pat, /^P00[1,2][8,9,0]\d{2}\d{5}$/]; //P00200300001
+const indonesia_sim = [ID, pat_id1, /^S00[1,2][8,9,0]\d{2}\d{5}$/];
+const indonesia_pct = [ID, pat_pct, /^W00[1,2][8,9,0]\d{2}\d{5}$/];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -327,7 +343,7 @@ const ohim = [
 const europe = [eur_pat];
 const spain = [spain_pat, spain_pct, spain_spc];
 const finland = [finnish_pat, finnish_med, finnish_pla, finnish_bth, finnish_umc];
-const great_britain = [britain_pat];
+const great_britain = [britain_pat, britain_old_pat];
 const croatia = [croatia_pat, croatia_tmk, croatia_ind, croatia_lay, croatia_geo, croatia_org];
 const ireland = [ireland_pat];
 const israel = [israel_pat, israel_tmk, israel_ind];
@@ -357,6 +373,9 @@ const cuba = [cuba_pat];
 const denmark = [denmark_pat, denmark_uma, denmark_pa2, denmark_um2];
 const ecuador = [ecuador_pat, ecuador_uma];
 const egypt = [egypt_pat_new, egypt_pat_old];
+const france = [france_ancien_systeme, france_nouvelle_systeme];
+const hungary = [hungary_pat_old, hungary_pat_new, hungary_uma];
+const indonesia = [indonesia_pat, indonesia_pct, indonesia_sim];
 
 const countries = [
     austria,
@@ -402,5 +421,8 @@ const countries = [
     cuba,
     denmark,
     ecuador,
-    egypt
+    egypt,
+    france,
+    hungary,
+    indonesia
 ];

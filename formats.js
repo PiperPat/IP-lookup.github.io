@@ -226,9 +226,40 @@ const wipo_tmk = [WO, tmk_ind, /^\d{9}$/i];
 
 // end of "current" PDF (which doesn't have NZ, US) -- starting on "historic" pdf
 // for consistency, if no \s in pdf, no \s? in regex. This will be exact.
+// Also, it'll be case sensitive
 
-const armenia_pat = [AM, pat, /^P?[1,2][8,9,0]\d{2}\d{4}$/i];
-const armenia_uma = [AM, uma, /^U?[1,2][8,9,0]\d{2}\d{4}(\sU)?$/i];
+const armenia_pat = [AM, pat, /^P?[1,2][8,9,0]\d{2}\d{4}$/];
+const armenia_uma = [AM, uma, /^U?[1,2][8,9,0]\d{2}\d{4}(\sU)?$/];
+
+const argentina_pat = [AR, pat, /^P\d{9}$/];
+const argentina_uma = [AR, uma, /^M\d{9}$/];
+
+const azerbaijan_mys = [AZ, mys, /^\d{2}\/\d{6}$/];
+const azerbaijan_pat = [AZ, pat, /^a\s[1,2][8,9,0]\d{2}\s\d{4}$/];
+const azerbaijan_uma = [AZ, uma, /^u\s[1,2][8,9,0]\d{2}\s\d{4}$/];
+
+const old_belarus = [BY, blr_old, /^\d{6}$/];
+
+const switzerland_app = [CH, mys, /^\d{5}\/\d{2}(-\d)?$/];
+
+const china_old = [CN, chi_old, /^\d{2}\s1\s\d{5}$/];
+const china_inv = [CN, pat, /^[1,2][8,9,0]\d{2}\s1\s\d{7}$/];
+const china_uma = [CN, uma, /^[1,2][8,9,0]\d{2}\s2\s\d{7}$/];
+const china_in2 = [CN, ind, /^[1,2][8,9,0]\d{2}\s3\s\d{7}$/];
+const china_pc2 = [CN, pat_pct, /^[1,2][8,9,0]\d{2}\s8\s\d{7}$/];
+const china_pcu = [CN, pct_chi, /^[1,2][8,9,0]\d{2}\s9\s\d{7}$/];
+
+const czechoslovakia_pat = [CS, pat, /^(PV\s)?\d{4}(-|\/)\d\d$/];
+
+const cuba_pat = [CU, pat, /^\d+\/\d\d$/];
+
+const germany_old_pat = [DE, pat_de1, /^1\d{2}\s\d{2}\s\d{3}(\.\d)?$/];
+const germany_old_uma = [DE, pat_de2, /^2\d{2}\s\d{2}\s\d{3}(\.\d|\sU)?$/];
+const germany_old_epd = [DE, pat_de3, /^5\d{2}\s\d{2}\s\d{3}(\.\d)?$/];
+const germany_old_epf = [DE, pat_de4, /^6\d{2}\s\d{2}\s\d{3}(\.\d)?$/];
+
+const denmark_pat = [DK, pat_dk1, /^\d{4}\/\d{2}$/];
+const denmark_uma = [DK, pat_dk2, /^\d{7}\sU$/]; // 9500242 U
 
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
@@ -246,10 +277,15 @@ const brazil = [
 const belarus = [
     belarus_pat, belarus_pct,
     belarus_umc, belarus_ind, belarus_lay, belarus_geo,
-    belarus_tmk
+    belarus_tmk,
+    old_belarus
 ];
 const canada = [canada_pat, canada_ind];
-const china = [china_pat, china_pct, china_umc, china_ind];
+const china = [
+    china_pat, china_pct, china_umc, china_ind,
+    china_old,
+    china_inv, china_uma, china_in2, china_pc2, china_pcu
+];
 const costa_rica = [costa_rica_msc, costa_rica_tmk];
 const czech = [
     czech_pat,
@@ -265,7 +301,8 @@ const germany = [
     germany_pat, germany_pct, germany_spc,
     germany_umc, germany_uma, germany_lay,
     germany_tmk, germany_geo,
-    germany_ind
+    germany_ind,
+    germany_old_pat, germany_old_uma, germany_old_epd, germany_old_epf
 ];
 const eurasia = [eurasia_pat];
 const estonia = [
@@ -301,7 +338,14 @@ const slovakia = [
 ];
 const ukraine = [ukraine_pat, ukraine_umc, ukraine_tmk, ukraine_ind, ukraine_lay, ukraine_qog];
 const wipo = [wipo_pat, wipo_tmk];
+
 const armenia = [armenia_pat, armenia_uma];
+const argentina = [argentina_pat, argentina_uma]
+const azerbaijan = [azerbaijan_mys, azerbaijan_pat, azerbaijan_uma];
+const switzerland = [switzerland_app];
+const czechoslovakia = [czechoslovakia_pat];
+const cuba = [cuba_pat];
+const denmark = [denmark_pat, denmark_uma];
 
 const countries = [
     austria,
@@ -339,5 +383,11 @@ const countries = [
     slovakia,
     ukraine,
     wipo,
-    armenia
+    armenia,
+    argentina,
+    azerbaijan,
+    switzerland,
+    czechoslovakia,
+    cuba,
+    denmark
 ];

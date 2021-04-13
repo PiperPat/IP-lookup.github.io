@@ -27,6 +27,7 @@ const inn = "Innovation/simple/short-term/petty patent applications (Innovations
 const prg = "Computer programs";
 const dtb = "Databases";
 const qog = "Qualified indications of origin of goods";
+const mys = "Unknown application type";
 
 const pat_pco = "applications filed by nationals and applications filed through Paris Convention";
 const pat_pct = "PCT applications";
@@ -43,6 +44,13 @@ const pat_se3 = "national patent application submitted via online service Swedis
 const pat_se5 = "national patent application submitted via online service Online Filing (epoline Online Filing (eOLF))";
 const pat_se7 = "limitation of patent";
 const pat_se9 = "SPCs submitted on paper";
+const pct_chi = "PCT patent application for utility model entering CN national phase.";
+const pat_de1 = "National patent applications, PCT applications in the national phase and applications for SPCs (used from 1995 to 2003)";
+const pat_de2 = "Utility model applications and topographies (used from 1995 to 2003).";
+const pat_de3 = "Patents granted by the EPO, filed in German (used for applications filed with the EPO as of 1989).";
+const pat_de4 = "Patents granted by the EPO, filed in English or French (used for applications filed with the EPO as of 1989).";
+const pat_dk1 = "Patent applications (used until the end of 1997)";
+const pat_dk2 = "Utility model applications (used until the end of 1997)";
 
 const utl_pco = umc + " (applications filed by nationals and applications filed through Paris Convention)";
 const utl_pct = umc + " (PCT applications)";
@@ -89,6 +97,11 @@ const tmk_ndv = tmk_nat + ' (divisional)';
 const ind_ndv = ind_nat + ' (divisional)';
 const tmi_div = tmk_int + ' (divisional)';
 const ind_idv = ind_int + ' (divisional)';
+
+const old = "Application from old numbering system";
+const old_pat = "Patent application from old numbering system"
+const blr_old = old + " (used until the end of 1997)";
+const chi_old = old_pat + " (used from April 1, 1985, to September 30, 2003)";
 
 const all = pat + ', ' + pat_pct + ', ' + tmk + ', or ' + ind;
 const can = pat + ", " + pat_pct + ", " + tmk;

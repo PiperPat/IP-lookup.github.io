@@ -5,7 +5,7 @@
  *      Notes: Main JS file for this project, there's a simple forEach
  *      that loops through every country/ip-type to see if a search
  *      query matches any known ip numbering formats.
- *      Dependent on: formats.js, ip_type.js, filters.js
+ *      Dependent on: formats.js, ip_types.js, filters.js
  */
 
 document.addEventListener("keyup", function(event) {
@@ -47,7 +47,10 @@ function lookup() {
         });
     });
 
-    if (!found_match) document.getElementById('result').innerText = "that doesn't match any IP known format";
+    let err = "that doesn't match any IP known format<br>";
+    err = err + "If your query number contains a hyphen, try deleting and manually typing it."
+
+    if (!found_match) document.getElementById('result').innerHTML = err;
     else {
         let html = "";
         if (results.length > 1) html = html + "<strong>That query matches more than one IP numbering system</strong><br>";

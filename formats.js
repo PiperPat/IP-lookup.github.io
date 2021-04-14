@@ -155,7 +155,7 @@ const italy_lay = [IT, lay, /^[A-Z]{2}([1,2][8,9,0])?\d{2}S?(\d{2})?\d{4}(\sS)?$
 const italy_old_pat = [ITO, pat_it1, /^(\d{5}\sA\/\d{2})|(\d{5}\/\d{2})$/]; // from Historic doc 19001 A/73
 const italy_old_uma = [ITO, pat_it2, /^(\d{5}\sB\/\d{2})|\d{5}\/\d{2}\sU$/];
 
-const japan_all = [JP, all, /^\d{4}-?\d{6}?$/];
+const japan_all = [JP, all, /^\d{4}-?\d{6}$/];
 
 const korea_pat = [KR, pat, /^10-\d{4}-\d{7}$/];
 const korea_umc = [KR, umc, /^20-\d{4}-\d{7}$/];
@@ -296,6 +296,19 @@ const irish_nsh_pat = [IE, pat_ie4, /^S[1,2][8,9,0]\d{2}\/\d{4}$/];
 
 const india_all = [IN, mys, /^\d{3}\/\d{2}$/];
 
+const japan_old = [JP, pat_jp1, /^\d+(-|\/)\d{5}$/];
+const japan_uma = [JP, uma, /^\d{4}-?\d{6}\sU$/];
+const japan_alt_pat = [JP, pat_jp2, /^\d{4}\/\d{6}$/];
+const japan_old_uma = [JP, pat_jp3, /^\d+(\/|-)\d{5}\sU$/];
+
+const kenya_pat = [KE, pat, /^(KE\/P\/)?\d{2}\/\d{5}$/];
+const kenya_uma = [KE, uma, /^(KE\/UM\/)?\d{2}\/\d{5}$/];
+
+const kyrgyzstan_pat_old = [KG, pat_kg1, /^\d{6}\.1$/];
+const kyrgyzstan_uma_old = [KG, pat_kg2, /^\d{6}\.2$/];
+const kyrgyzstan_pat_new = [KG, pat_kg3, /^[1,2][8,9,0]\d{2}\d{4}\.1$/]; //20030016
+const kyrgyzstan_uma_new = [KG, pat_kg4, /^[1,2][8,9,0]\d{2}\d{4}\.2$/];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -361,7 +374,7 @@ const italy = [
     italy_pat, italy_pla, italy_spc, italy_umc, italy_tmk, italy_ind, italy_lay,
     italy_old_pat, italy_old_uma
 ];
-const japan = [japan_all];
+const japan = [japan_all, japan_old, japan_uma, japan_alt_pat, japan_old_uma];
 const korea = [korea_pat, korea_tmk, korea_umc, korea_ind];
 const lithuania = [lithuania_pat, lithuania_spc, lithuania_tmk];
 const moldova = [moldova_pat, moldova_inn, moldova_pla, moldova_umc, moldova_ind, moldova_lay];
@@ -390,6 +403,7 @@ const france = [france_ancien_systeme, france_nouvelle_systeme];
 const hungary = [hungary_pat_old, hungary_pat_new, hungary_uma];
 const indonesia = [indonesia_pat, indonesia_pct, indonesia_sim];
 const india = [india_all];
+const kenya = [kenya_pat, kenya_uma];
 
 const countries = [
     austria,
@@ -439,5 +453,6 @@ const countries = [
     france,
     hungary,
     indonesia,
-    india
+    india,
+    kenya
 ];

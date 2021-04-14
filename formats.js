@@ -157,11 +157,6 @@ const italy_old_uma = [ITO, pat_it2, /^(\d{5}\sB\/\d{2})|\d{5}\/\d{2}\sU$/];
 
 const japan_all = [JP, all, /^\d{4}-?\d{6}$/];
 
-const korea_pat = [KR, pat, /^10-\d{4}-\d{7}$/];
-const korea_umc = [KR, umc, /^20-\d{4}-\d{7}$/];
-const korea_ind = [KR, ind, /^30-\d{4}-\d{7}$/];
-const korea_tmk = [KR, tmk, /^40-\d{4}-\d{7}$/];
-
 const lithuania_pat = [LT, pat, /^\d{4}\s?\d{3}$/];
 const lithuania_tmk = [LT, tmk, /^\d{4}\s?\d{4}$/];
 const lithuania_spc = [LT, spc, /^PA\s?\d{4}\s?\d{3}$/];
@@ -323,6 +318,7 @@ const south_korea_ind = [KR, ind, /^30-[1,2][8,9,0]\d{2}-\d{7}$/];
 const south_korea_tmk = [KR, tmk, /^[4-7]\d-[1,2][8,9,0]\d{2}-\d{7}$/]; // the true range for tmks is 40-75
 
 
+
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
 const bosnia_herz = [bosnia_herz_pat, bosnia_herz_tmk, bosnia_herz_ind];
@@ -388,7 +384,6 @@ const italy = [
     italy_old_pat, italy_old_uma
 ];
 const japan = [japan_all, japan_old, japan_uma, japan_alt_pat, japan_old_uma];
-const korea = [korea_pat, korea_tmk, korea_umc, korea_ind];
 const lithuania = [lithuania_pat, lithuania_spc, lithuania_tmk];
 const moldova = [moldova_pat, moldova_inn, moldova_pla, moldova_umc, moldova_ind, moldova_lay];
 const poland = [poland_pat, poland_umc, poland_tmk, poland_ind, poland_spc];
@@ -454,7 +449,6 @@ const countries = [
     israel,
     italy,
     japan,
-    korea,
     lithuania,
     moldova,
     poland,
@@ -479,5 +473,6 @@ const countries = [
     indonesia,
     india,
     kenya,
-    north_korea
+    north_korea,
+    south_korea
 ];

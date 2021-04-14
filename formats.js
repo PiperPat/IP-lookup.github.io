@@ -144,13 +144,16 @@ const israel_pat = [IL, pat, /^1\d{5}$/i];
 const israel_tmk = [IL, tmk, /^2\d{5}$/i];
 const israel_ind = [IL, ind, /^5\d{5}$/i];
 
-const italy_pat = [IT, pat, /^RM\d{4}A\d{6}$/i]; // RM2012A000123
-const italy_pla = [IT, pat_pla, /^RM\d{4}V\d{6}$/i];
-const italy_spc = [IT, spc, /^RM\d{4}P\d{6}$/i];
-const italy_umc = [IT, umc, /^RM\d{4}U\d{6}$/i];
-const italy_tmk = [IT, tmk, /^RM\d{4}C\d{6}$/i];
-const italy_ind = [IT, ind, /^RM\d{4}O\d{6}$/i];
-const italy_lay = [IT, lay, /^RM\d{4}S\d{6}$/i];
+const italy_pat = [IT, pat, /^[A-Z]{2}([1,2][8,9,0])?\d{2}A\d{6}$/]; // From Current doc
+const italy_pla = [IT, pat_pla, /^[A-Z]{2}([1,2][8,9,0])?\d{2}V\d{6}$/];
+const italy_spc = [IT, spc, /^[A-Z]{2}([1,2][8,9,0])?\d{2}P\d{6}$/];
+const italy_umc = [IT, umc, /^[A-Z]{2}([1,2][8,9,0])?\d{2}U\d{6}$/];
+const italy_tmk = [IT, tmk, /^[A-Z]{2}([1,2][8,9,0])?\d{2}C\d{6}$/];
+const italy_ind = [IT, ind, /^[A-Z]{2}([1,2][8,9,0])?\d{2}O\d{6}$/];
+const italy_lay = [IT, lay, /^[A-Z]{2}([1,2][8,9,0])?\d{2}S\d{6}$/];
+
+const italy_old_pat = [ITO, pat_it1, /^(\d{5}\sA\/\d{2})|(\d{5}\/\d{2})$/]; // from Historic doc 19001 A/73
+const italy_old_uma = [ITO, pat_it2, /^(\d{5}\sB\/\d{2})|\d{5}\/\d{2}\sU$/];
 
 const japan_all = [JP, all, /^\d{4}-?\d{6}?$/];
 
@@ -291,6 +294,8 @@ const irish_mid_pat = [IE, pat_ie2, /^\d{6}$/];
 const irish_msh_pat = [IE, pat_ie3, /^S\d{6}$/];
 const irish_nsh_pat = [IE, pat_ie4, /^S[1,2][8,9,0]\d{2}\/\d{4}$/];
 
+const india_all = [IN, mys, /^\d{3}\/\d{2}$/];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -352,7 +357,10 @@ const great_britain = [britain_pat, britain_old_pat];
 const croatia = [croatia_pat, croatia_tmk, croatia_ind, croatia_lay, croatia_geo, croatia_org];
 const ireland = [ireland_pat, irish_old_pat, irish_mid_pat, irish_msh_pat, irish_nsh_pat];
 const israel = [israel_pat, israel_tmk, israel_ind];
-const italy = [italy_pat, italy_pla, italy_spc, italy_umc, italy_tmk, italy_ind, italy_lay];
+const italy = [
+    italy_pat, italy_pla, italy_spc, italy_umc, italy_tmk, italy_ind, italy_lay,
+    italy_old_pat, italy_old_uma
+];
 const japan = [japan_all];
 const korea = [korea_pat, korea_tmk, korea_umc, korea_ind];
 const lithuania = [lithuania_pat, lithuania_spc, lithuania_tmk];
@@ -381,6 +389,7 @@ const egypt = [egypt_pat_new, egypt_pat_old];
 const france = [france_ancien_systeme, france_nouvelle_systeme];
 const hungary = [hungary_pat_old, hungary_pat_new, hungary_uma];
 const indonesia = [indonesia_pat, indonesia_pct, indonesia_sim];
+const india = [india_all];
 
 const countries = [
     austria,
@@ -429,5 +438,6 @@ const countries = [
     egypt,
     france,
     hungary,
-    indonesia
+    indonesia,
+    india
 ];

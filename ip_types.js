@@ -61,6 +61,8 @@ const pat_ie1 = "Patent applications (this numbering system was used until the e
 const pat_ie2 = "Patent applications - Numbering system applied from January 1, 1992, to December 31, 1999."
 const pat_ie3 = "Short-term applications - Numbering system applied from January 1, 1992, to December 31, 1999.";
 const pat_ie4 = "Short-term applications";
+const pat_it1 = "Patent applications - Numbering system used until December 31, 1990";
+const pat_it2 = "Utility model applications - Numbering system used until December 31, 1990"; //not pat, historic convntn
 
 const utl_pco = umc + " (applications filed by nationals and applications filed through Paris Convention)";
 const utl_pct = umc + " (PCT applications)";

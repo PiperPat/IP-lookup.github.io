@@ -43,6 +43,15 @@ function lookup() {
             if (regex.test(query)) {
                 if (filter.includes(type[1]) || filter == "all") results.push(type[0] + ": " + type[1]);
                 found_match = true;
+                if (type[0] == IT) { // special handling for italian provinces
+                    let prov_code = query.substring(0, 2);
+                    it_prov_codes.forEach(it_prov => {
+                        if (it_prov[0] == prov_code) {
+                            results.pop();
+                            results.push(type[0] + ", province of " + it_prov[1] + ": " + type[1]);
+                        }
+                    });
+                }
             }
         });
     });

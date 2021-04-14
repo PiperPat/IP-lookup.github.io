@@ -253,3 +253,4 @@ const EM = "OHIM";
 const EP = "European Patent Office";
 const WO = "World Intellectual Property Organization";
 const CS = "Czechoslovakia (Ceased to exist on December 31, 1992)";
+const ITO = "Italy";

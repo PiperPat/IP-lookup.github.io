@@ -313,10 +313,14 @@ const north_korea_old = [KP, pat_kp1, /^\d{2}-\d{4}$/];
 const north_korea_pat = [KP, pat_kp2, /^1-\d{2}-\d{6}$/];
 const north_korea_uma = [KP, pat_kp3, /^2-\d{2}-\d{6}$/];
 
-const south_korea_old = [KR, pat, /^([1,2][8,9,0])?\d{2}-\d{6}$/];
-const south_korea_pct = [KR, pat_pct, /^([1,2][8,9,0])?\d{2}-7\d{5}$/];
-const south_korea_uma = [KR, uma, /^([1,2][8,9,0])?\d{2}-\d{6}\sU$/];
-const south_korea_upc = [KR, pat_kr1, /^([1,2][8,9,0])?\d{2}-7\d{5}\sU$/];
+// const south_korea_old_pat = [KR, pat_kr1, /^([1,2][8,9,0])?\d{2}-\d{6}$/];
+// const south_korea_old_pct = [KR, pat_kr2, /^([1,2][8,9,0])?\d{2}-7\d{5}$/];
+// const south_korea_old_uma = [KR, pat_kr3, /^([1,2][8,9,0])?\d{2}-\d{6}\sU$/];
+// const south_korea_old_upc = [KR, pat_kr4, /^([1,2][8,9,0])?\d{2}-7\d{5}\sU$/];
+// const south_korea_pat = [KR, pat, /^10-[1,2][8,9,0]\d{2}-\d{7}$/];
+// const south_korea_uma = [KR, uma, /^20-[1,2][8,9,0]\d{2}-\d{7}$/];
+// const south_korea_ind = [KR, ind, /^30-[1,2][8,9,0]\d{2}-\d{7}$/];
+// const south_korea_tmk = [KR, tmk, /^[4-7]\d-[1,2][8,9,0]\d{2}-\d{7}$/]; // the true range for tmks is 40-75
 
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
@@ -414,7 +418,17 @@ const indonesia = [indonesia_pat, indonesia_pct, indonesia_sim];
 const india = [india_all];
 const kenya = [kenya_pat, kenya_uma];
 const north_korea = [north_korea_old, north_korea_pat, north_korea_uma];
-const south_korea = [south_korea_old, south_korea_pct, south_korea_uma, south_korea_uma];
+const south_korea = [
+    [AU, "g'day m8", /^10-2002-7012345$/]
+    // south_korea_old_pat,
+    // south_korea_old_pct,
+    // south_korea_old_uma,
+    // south_korea_old_upc,
+    // south_korea_pat,
+    // south_korea_uma,
+    // south_korea_ind,
+    // south_korea_tmk
+];
 
 const countries = [
     austria,
@@ -466,6 +480,5 @@ const countries = [
     indonesia,
     india,
     kenya,
-    north_korea,
-    south_korea
+    north_korea
 ];

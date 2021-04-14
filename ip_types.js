@@ -73,7 +73,11 @@ const pat_kg4 = uma + " filed after 1999";
 const pat_kp1 = pat + " according to the numbering system used before the end of 2003";
 const pat_kp2 = pat + " according to the numbering system used since January 2004"
 const pat_kp3 = uma + " according to the numbering system used since January 2004"
-const pat_kr1 = "PCT applications for a utility model";
+
+const pat_kr1 = pat + " filed before 1999";
+const pat_kr2 = pat_pct + "filed before 1999";
+const pat_kr3 = uma + "filed before 1999";
+const pat_kr4 = "PCT applications for a utility model";
 
 const utl_pco = umc + " (applications filed by nationals and applications filed through Paris Convention)";
 const utl_pct = umc + " (PCT applications)";

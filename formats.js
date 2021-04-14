@@ -142,15 +142,15 @@ const ireland_pat = [IE, pat, /^[1,2][8,9,0]\d{2}\/\d{4}$/];
 
 const israel_pat = [IL, pat, /^1\d{5}$/i];
 const israel_tmk = [IL, tmk, /^2\d{5}$/i];
-const israel_ind = [IL, ind, /^5\d{5}$/i];
+const israel_ind = [IL, ind, /^5\d{4}$/i];
 
-const italy_pat = [IT, pat, /^[A-Z]{2}([1,2][8,9,0])?\d{2}A\d{6}$/]; // From Current doc
-const italy_pla = [IT, pat_pla, /^[A-Z]{2}([1,2][8,9,0])?\d{2}V\d{6}$/];
-const italy_spc = [IT, spc, /^[A-Z]{2}([1,2][8,9,0])?\d{2}P\d{6}$/];
-const italy_umc = [IT, umc, /^[A-Z]{2}([1,2][8,9,0])?\d{2}U\d{6}$/];
-const italy_tmk = [IT, tmk, /^[A-Z]{2}([1,2][8,9,0])?\d{2}C\d{6}$/];
-const italy_ind = [IT, ind, /^[A-Z]{2}([1,2][8,9,0])?\d{2}O\d{6}$/];
-const italy_lay = [IT, lay, /^[A-Z]{2}([1,2][8,9,0])?\d{2}S\d{6}$/];
+const italy_pat = [IT, pat, /^[A-Z]{2}([1,2][8,9,0])?\d{2}A?(\d{2})?\d{4}(\sA)?$/]; // From Current doc
+const italy_pla = [IT, pat_pla, /^[A-Z]{2}([1,2][8,9,0])?\d{2}V?(\d{2})?\d{4}(\sV)?$/];
+const italy_spc = [IT, spc, /^[A-Z]{2}([1,2][8,9,0])?\d{2}P?(\d{2})?\d{4}(\sP)?$/]; // P
+const italy_umc = [IT, umc, /^[A-Z]{2}([1,2][8,9,0])?\d{2}U?(\d{2})?\d{4}(\sU)?$/];
+const italy_tmk = [IT, tmk, /^[A-Z]{2}([1,2][8,9,0])?\d{2}C?(\d{2})?\d{4}(\sC)?$/]; // C
+const italy_ind = [IT, ind, /^[A-Z]{2}([1,2][8,9,0])?\d{2}O?(\d{2})?\d{4}(\sO)?$/]; //O
+const italy_lay = [IT, lay, /^[A-Z]{2}([1,2][8,9,0])?\d{2}S?(\d{2})?\d{4}(\sS)?$/]; // S
 
 const italy_old_pat = [ITO, pat_it1, /^(\d{5}\sA\/\d{2})|(\d{5}\/\d{2})$/]; // from Historic doc 19001 A/73
 const italy_old_uma = [ITO, pat_it2, /^(\d{5}\sB\/\d{2})|\d{5}\/\d{2}\sU$/];

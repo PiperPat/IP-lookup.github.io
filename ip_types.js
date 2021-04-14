@@ -68,7 +68,11 @@ const pat_jp2 = "Patent applications filed since January 1, 2000";
 const pat_jp3 = "Utility model applications filed before January 1, 2000";
 const pat_kg1 = pat + " filed before the end of 1999 ()";
 const pat_kg2 = uma + " filed before the end of 1999";
-const pat_kg3 = pat + " filed since 1999";
+const pat_kg3 = pat + " filed after 1999";
+const pat_kg4 = uma + " filed after 1999";
+const pat_kp1 = pat + " according to the numbering system used before the end of 2003";
+const pat_kp2 = pat + " according to the numbering system used since January 2004"
+const pat_kp3 = uma + " according to the numbering system used since January 2004"
 
 const utl_pco = umc + " (applications filed by nationals and applications filed through Paris Convention)";
 const utl_pct = umc + " (PCT applications)";

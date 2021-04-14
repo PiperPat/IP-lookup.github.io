@@ -309,6 +309,10 @@ const kyrgyzstan_uma_old = [KG, pat_kg2, /^\d{6}\.2$/];
 const kyrgyzstan_pat_new = [KG, pat_kg3, /^[1,2][8,9,0]\d{2}\d{4}\.1$/]; //20030016
 const kyrgyzstan_uma_new = [KG, pat_kg4, /^[1,2][8,9,0]\d{2}\d{4}\.2$/];
 
+const north_korea_old = [KP, pat_kp1, /^\d{2}-\d{4}$/];
+const north_korea_pat = [KP, pat_kp2, /^1-\d{2}-\d{6}$/];
+const north_korea_uma = [KP, pat_kp3, /^2-\d{2}-\d{6}$/];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -404,6 +408,7 @@ const hungary = [hungary_pat_old, hungary_pat_new, hungary_uma];
 const indonesia = [indonesia_pat, indonesia_pct, indonesia_sim];
 const india = [india_all];
 const kenya = [kenya_pat, kenya_uma];
+const north_korea = [north_korea_old, north_korea_pat, north_korea_uma];
 
 const countries = [
     austria,
@@ -454,5 +459,6 @@ const countries = [
     hungary,
     indonesia,
     india,
-    kenya
+    kenya,
+    north_korea
 ];

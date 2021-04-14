@@ -313,6 +313,11 @@ const north_korea_old = [KP, pat_kp1, /^\d{2}-\d{4}$/];
 const north_korea_pat = [KP, pat_kp2, /^1-\d{2}-\d{6}$/];
 const north_korea_uma = [KP, pat_kp3, /^2-\d{2}-\d{6}$/];
 
+const south_korea_old = [KR, pat, /^([1,2][8,9,0])?\d{2}-\d{6}$/];
+const south_korea_pct = [KR, pat_pct, /^([1,2][8,9,0])?\d{2}-7\d{5}$/];
+const south_korea_uma = [KR, uma, /^([1,2][8,9,0])?\d{2}-\d{6}\sU$/];
+const south_korea_upc = [KR, pat_kr1, /^([1,2][8,9,0])?\d{2}-7\d{5}\sU$/];
+
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
 const australia = [australian_pat, australian_tmk, australian_ind];
@@ -409,6 +414,7 @@ const indonesia = [indonesia_pat, indonesia_pct, indonesia_sim];
 const india = [india_all];
 const kenya = [kenya_pat, kenya_uma];
 const north_korea = [north_korea_old, north_korea_pat, north_korea_uma];
+const south_korea = [south_korea_old, south_korea_pct, south_korea_uma, south_korea_uma];
 
 const countries = [
     austria,
@@ -460,5 +466,6 @@ const countries = [
     indonesia,
     india,
     kenya,
-    north_korea
+    north_korea,
+    south_korea
 ];

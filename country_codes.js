@@ -254,4 +254,4 @@ const EP = "European Patent Office";
 const WO = "World Intellectual Property Organization";
 const CS = "Czechoslovakia (Ceased to exist on December 31, 1992)";
 const ITO = "Italy";
-const MK = "THE FORMER YUGOSLAV REPUBLIC OF MACEDONIA";
+const YMK = "THE FORMER YUGOSLAV REPUBLIC OF MACEDONIA";

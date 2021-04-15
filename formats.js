@@ -330,10 +330,16 @@ const madagascar_new = [MG, mys, /^[1,2][8,9,0]\d{2}\/\d{2,3}$/];
 
 const yugoslav_macedonia_pat = [MK, pat, /^\d{2,3}\/\d{2}$/];
 
-const mexico_pat = [MX, pat, /^[A-Z]\/a\/[1,2][8,9,0]\d{2}\/\d{6}$/]; //000001
-const mexico_ind = [MX, pat_mx1, /^[A-Z]\/f\/[1,2][8,9,0]\d{2}\/\d{6}$/];
-const mexico_lay = [MX, lay, /^[A-Z]\/t\/[1,2][8,9,0]\d{2}\/\d{6}$/];
-const mexico_uma = [MX, uma, /^[A-Z]\/u\/[1,2][8,9,0]\d{2}\/\d{6}$/];
+const mexico_pat = [MX, pat, /^[A-Z]{2}\/a\/[1,2][8,9,0]\d{2}\/\d{6}$/]; //000001
+const mexico_ind = [MX, pat_mx1, /^[A-Z]{2}\/f\/[1,2][8,9,0]\d{2}\/\d{6}$/];
+const mexico_lay = [MX, lay, /^[A-Z]{2}\/t\/[1,2][8,9,0]\d{2}\/\d{6}$/];
+const mexico_uma = [MX, uma, /^[A-Z]{2}\/u\/[1,2][8,9,0]\d{2}\/\d{6}$/];
+
+const dutch_mys = [NL, mys, /^\d{7}$/];
+
+const norway_anc = [NO, pat_no1, /^\d{4}\/\d{2}$/];
+const norway_old = [NO, pat_no2, /^\d{6}$/];
+const norway_new = [NO, mys, /^[1,2][8,9,0]\d{2}\d{4}$/];
 
 
 
@@ -446,6 +452,8 @@ const lesotho = [lesotho_pat, lesotho_uma];
 const madagascar = [madagascar_old, madagascar_new];
 const yugoslav_macedonia = [yugoslav_macedonia_pat];
 const mexico = [mexico_pat, mexico_ind, mexico_lay, mexico_uma];
+const netherlands = [dutch_mys];
+const norway = [norway_anc, norway_old, norway_new];
 
 const countries = [
     austria,
@@ -502,5 +510,7 @@ const countries = [
     lithuania,
     madagascar,
     yugoslav_macedonia,
-    mexico
+    mexico,
+    netherlands,
+    norway
 ];

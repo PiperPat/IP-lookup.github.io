@@ -52,6 +52,15 @@ function lookup() {
                         }
                     });
                 }
+                if (type[0] == MX) {
+                    let prov_code = query.substring(0, 2);
+                    mx_prov_codes.forEach(mx_prov => {
+                        if (mx_prov[0] == prov_code) {
+                            results.pop();
+                            results.push(type[0] + " (province of " + mx_prov[1] + "): " + type[1]);
+                        }
+                    });
+                }
             }
         });
     });

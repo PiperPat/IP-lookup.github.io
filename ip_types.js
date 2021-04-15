@@ -73,6 +73,10 @@ const pat_kg4 = uma + " filed after 1999";
 const pat_kp1 = pat + " according to the numbering system used before the end of 2003";
 const pat_kp2 = pat + " according to the numbering system used since January 2004"
 const pat_kp3 = uma + " according to the numbering system used since January 2004"
+const pat_lt1 = mys + "filed before January 1, 1995";
+const pat_md1 = "filed before December 31, 1999";
+const pat_mg1 = "Numbering system used from 1994 to 1999.";
+const pat_mx1 = "Industrial designs or model applications";
 
 const pat_kr1 = pat + " filed before 1999";
 const pat_kr2 = pat_pct + "filed before 1999";

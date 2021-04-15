@@ -157,17 +157,19 @@ const italy_old_uma = [ITO, pat_it2, /^(\d{5}\sB\/\d{2})|\d{5}\/\d{2}\sU$/];
 
 const japan_all = [JP, all, /^\d{4}-?\d{6}$/];
 
-const lithuania_pat = [LT, pat, /^\d{4}\s?\d{3}$/];
-const lithuania_tmk = [LT, tmk, /^\d{4}\s?\d{4}$/];
-const lithuania_spc = [LT, spc, /^PA\s?\d{4}\s?\d{3}$/];
+const lithuania_pat = [LT, pat, /^[1,2][8,9,0]\d{2}\s\d{3}$/];
+const lithuania_tmk = [LT, tmk, /^[1,2][8,9,0]\d{2}\s\d{4}$/];
+const lithuania_spc = [LT, spc, /^PA\s?[1,2][8,9,0]\d{2}\s\d{3}$/];
+const lithuania_old = [LT, pat_lt1, /^\d{2}-\d{3}$/];
 
-const moldova_pat = [MD, pat_wiz, /^(md\s?)?a\s?\d{4}\s?\d{4}$/i];
-const moldova_inn = [MD, inn, /^(md\s?)?s\s?\d{4}\s?\d{4}$/i];
-const moldova_pla = [MD, pat_pla, /^(md\s?)?v\s?\d{4}\s?\d{4}$/i];
-const moldova_umc = [MD, umc, /^(md\s?)?u\s?\d{4}\s?\d{4}$/i];
-const moldova_ind = [MD, ind, /^(md\s?)?f\s?\d{4}\s?\d{4}$/i];
-const moldova_lay = [MD, lay, /^(md\s?)?t\s?\d{4}\s?\d{4}$/i];
+const moldova_pat = [MD, pat_wiz, /^(md\s?)?a\s?[1,2][8,9,0]\d{2}\s?\d{4}$/i];
+const moldova_inn = [MD, inn, /^(md\s?)?s\s?[1,2][8,9,0]\d{2}\s?\d{4}$/i];
+const moldova_pla = [MD, pat_pla, /^(md\s?)?v\s?[1,2][8,9,0]\d{2}\s?\d{4}$/i];
+const moldova_umc = [MD, umc, /^(md\s?)?u\s?[1,2][8,9,0]\d{2}\s?\d{4}$/i];
+const moldova_ind = [MD, ind, /^(md\s?)?f\s?[1,2][8,9,0]\d{2}\s?\d{4}$/i];
+const moldova_lay = [MD, lay, /^(md\s?)?t\s?[1,2][8,9,0]\d{2}\s?\d{4}$/i];
 const moldova_tmk = [MD, tmk, /^(md\s?)?\d{6}$/i];
+const moldova_old = [MD, pat_md1, /^\d{2}-\d{4}$/];
 
 const poland_pat = [PL, pat_wiz, /^(P\.)?\d{5,6}$/i];
 const poland_umc = [PL, umc, /^(W\.)?\d{5,6}$/i];
@@ -317,6 +319,22 @@ const south_korea_uma = [KR, uma, /^20-[1,2][8,9,0]\d{2}-\d{7}$/];
 const south_korea_ind = [KR, ind, /^30-[1,2][8,9,0]\d{2}-\d{7}$/];
 const south_korea_tmk = [KR, tmk, /^[4-7]\d-[1,2][8,9,0]\d{2}-\d{7}$/]; // the true range for tmks is 40-75
 
+const kazakhstan_pat = [KZ, pat, /^\d{2}\d{3,4}\.1$/];
+const kazakhstan_uma = [KZ, uma, /^(\d{2}\d{3,4}\.2)|([1,2][8,9,0]\d{2}\/\d{3,4}(\.2|\sU)?)$/];
+
+const lesotho_pat = [LS, pat, /^(LS\/P\/)?\d{2}\/\d{5}$/];
+const lesotho_uma = [LS, uma, /^(LS\/UM\/)?\d{2}\/\d{5}$/];
+
+const madagascar_old = [MG, pat_mg1, /^\d{5}$/];
+const madagascar_new = [MG, mys, /^[1,2][8,9,0]\d{2}\/\d{2,3}$/];
+
+const yugoslav_macedonia_pat = [MK, pat, /^\d{2,3}\/\d{2}$/];
+
+const mexico_pat = [MX, pat, /^[A-Z]\/a\/[1,2][8,9,0]\d{2}\/\d{6}$/]; //000001
+const mexico_ind = [MX, pat_mx1, /^[A-Z]\/f\/[1,2][8,9,0]\d{2}\/\d{6}$/];
+const mexico_lay = [MX, lay, /^[A-Z]\/t\/[1,2][8,9,0]\d{2}\/\d{6}$/];
+const mexico_uma = [MX, uma, /^[A-Z]\/u\/[1,2][8,9,0]\d{2}\/\d{6}$/];
+
 
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
@@ -384,8 +402,8 @@ const italy = [
     italy_old_pat, italy_old_uma
 ];
 const japan = [japan_all, japan_old, japan_uma, japan_alt_pat, japan_old_uma];
-const lithuania = [lithuania_pat, lithuania_spc, lithuania_tmk];
-const moldova = [moldova_pat, moldova_inn, moldova_pla, moldova_umc, moldova_ind, moldova_lay];
+const lithuania = [lithuania_pat, lithuania_spc, lithuania_tmk, lithuania_old];
+const moldova = [moldova_pat, moldova_inn, moldova_pla, moldova_umc, moldova_ind, moldova_lay, moldova_old];
 const poland = [poland_pat, poland_umc, poland_tmk, poland_ind, poland_spc];
 const romania = [romania_pat, romania_umc, romania_tmk, romania_ind, romania_spc, romania_lay];
 const serbia = [serbia_pat, serbia_inn, serbia_tmk, serbia_ind, serbia_lay];
@@ -423,6 +441,11 @@ const south_korea = [
     south_korea_ind,
     south_korea_tmk
 ];
+const kazakhstan = [kazakhstan_pat, kazakhstan_uma];
+const lesotho = [lesotho_pat, lesotho_uma];
+const madagascar = [madagascar_old, madagascar_new];
+const yugoslav_macedonia = [yugoslav_macedonia_pat];
+const mexico = [mexico_pat, mexico_ind, mexico_lay, mexico_uma];
 
 const countries = [
     austria,
@@ -474,5 +497,10 @@ const countries = [
     india,
     kenya,
     north_korea,
-    south_korea
+    south_korea,
+    kazakhstan,
+    lithuania,
+    madagascar,
+    yugoslav_macedonia,
+    mexico
 ];

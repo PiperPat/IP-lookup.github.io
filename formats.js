@@ -341,6 +341,13 @@ const norway_anc = [NO, pat_no1, /^\d{4}\/\d{2}$/];
 const norway_old = [NO, pat_no2, /^\d{6}$/];
 const norway_new = [NO, mys, /^[1,2][8,9,0]\d{2}\d{4}$/];
 
+const r_init = /1\s/;
+const r_year = /[1,2][8,9,0]\d{2}/;
+const r_last = /\s\d{5}/;
+const afr_patt = new RegExp(eval(r_init) + eval(r_year) + eval(r_last));
+const afr_pat2 = new RegExp(/^1\s\d{4}\s\d{5}$/);
+const africa_pat = [OA, pat, afr_patt];
+
 
 
 const austria = [austrian_pat, austrian_spc, austrian_umc, austrian_tmk, austrian_ind, austrian_lay];
@@ -454,6 +461,7 @@ const yugoslav_macedonia = [yugoslav_macedonia_pat];
 const mexico = [mexico_pat, mexico_ind, mexico_lay, mexico_uma];
 const netherlands = [dutch_mys];
 const norway = [norway_anc, norway_old, norway_new];
+const africa = [africa_pat];
 
 const countries = [
     austria,
@@ -512,5 +520,6 @@ const countries = [
     yugoslav_macedonia,
     mexico,
     netherlands,
-    norway
+    norway,
+    africa
 ];

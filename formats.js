@@ -183,6 +183,7 @@ const romania_tmk = [RO, tmk, /^M\s?\d{4}\s?\d{5}$/i];
 const romania_ind = [RO, ind, /^f\s?\d{4}\s?\d{4}$/i];
 const romania_spc = [RO, spc, /^$c\s?\d{4}\s?\d{3}/i];
 const romania_lay = [RO, lay, /^$t\s?\d{4}\s?\d{2}/i];
+const romania_old = [RO, pat_ro1, /^\d{2}-\d{4}$/];
 
 const serbia_pat = [RS, pat_wiz, /^P-\d{4}\/\d{4}$/i];
 const serbia_inn = [RS, inn, /^MP-\d{4}\/\d{4}$/i];
@@ -341,12 +342,21 @@ const norway_anc = [NO, pat_no1, /^\d{4}\/\d{2}$/];
 const norway_old = [NO, pat_no2, /^\d{6}$/];
 const norway_new = [NO, mys, /^[1,2][8,9,0]\d{2}\d{4}$/];
 
-const r_init = /1\s/;
-const r_year = /[1,2][8,9,0]\d{2}/;
+
+// Start of regex concat for reduced repitition
+const r_y = /[1,2][8,9,0]\d{2}/;
+const r_y_2 = /[012789]\d/; // this will need to be updated in the 2030s
 const r_last = /\s\d{5}/;
-const afr_patt = new RegExp(eval(r_init) + eval(r_year) + eval(r_last));
-const afr_pat2 = new RegExp(/^1\s\d{4}\s\d{5}$/);
-const africa_pat = [OA, pat, afr_patt];
+
+const africa_pat = [OA, pat, RegExp(/1\s/.source + r_y.source + /\s\d{5}/.source)];
+const africa_uma = [OA, uma, RegExp(/2\s/.source + r_y.source + /\s\d{5}/.source)];
+
+const philippines_pat = [PH, pat, RegExp(/1-/.source + r_y.source + /-\d{5}/.source)];
+const philippines_pct = [PH, pat_pct, RegExp(/1-/.source + r_y.source + /-5\d{5}/.source)]; //1-1999-500001
+const philippines_uma = [PH, uma, RegExp(/2-/.source + r_y.source + /\d{5}/.source)];
+const philippines_upc = [PH, uma_pct, RegExp(/2-/.source + r_y.source + /-5\d{5}/.source)];
+
+const pakistan_mys = [PK, mys, /^\d{5}\/\d{2}$/];
 
 
 
@@ -418,7 +428,7 @@ const japan = [japan_all, japan_old, japan_uma, japan_alt_pat, japan_old_uma];
 const lithuania = [lithuania_pat, lithuania_spc, lithuania_tmk, lithuania_old];
 const moldova = [moldova_pat, moldova_inn, moldova_pla, moldova_umc, moldova_ind, moldova_lay, moldova_old];
 const poland = [poland_pat, poland_umc, poland_tmk, poland_ind, poland_spc];
-const romania = [romania_pat, romania_umc, romania_tmk, romania_ind, romania_spc, romania_lay];
+const romania = [romania_pat, romania_umc, romania_tmk, romania_ind, romania_spc, romania_lay, romania_old];
 const serbia = [serbia_pat, serbia_inn, serbia_tmk, serbia_ind, serbia_lay];
 const russia = [russia_pat, russia_ind, russia_tmk, russia_lay, russia_prg, russia_dtb];
 const sweden = [sweden_tmk, sweden_ind, sweden_pat0, sweden_pat3, sweden_pat5, sweden_pat7, sweden_pat9];
@@ -461,7 +471,9 @@ const yugoslav_macedonia = [yugoslav_macedonia_pat];
 const mexico = [mexico_pat, mexico_ind, mexico_lay, mexico_uma];
 const netherlands = [dutch_mys];
 const norway = [norway_anc, norway_old, norway_new];
-const africa = [africa_pat];
+const africa = [africa_pat, africa_uma];
+const philippines = [philippines_pat, philippines_pct, philippines_uma, philippines_upc];
+const pakistan = [pakistan_mys];
 
 const countries = [
     austria,
@@ -521,5 +533,7 @@ const countries = [
     mexico,
     netherlands,
     norway,
-    africa
+    africa,
+    philippines,
+    pakistan
 ];

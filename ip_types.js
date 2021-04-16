@@ -29,6 +29,8 @@ const dtb = "Databases";
 const qog = "Qualified indications of origin of goods";
 const mys = "Unknown application type";
 
+const uma_pct = uma + " (PCT)";
+
 const pat_pco = "applications filed by nationals and applications filed through Paris Convention";
 const pat_pct = "PCT applications";
 const pat_div = "divided patent applications";
@@ -79,6 +81,7 @@ const pat_mg1 = "Numbering system used from 1994 to 1999.";
 const pat_mx1 = "Industrial designs or model applications";
 const pat_no1 = mys + " (old numbering system)";
 const pat_no2 = mys + " (numbering system from January 1 1974 - June 1998)";
+const pat_ro1 = mys + " (old numbering system, introduced on January 21, 1992)"
 
 const pat_kr1 = pat + " filed before 1999";
 const pat_kr2 = pat_pct + "filed before 1999";

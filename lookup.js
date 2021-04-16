@@ -40,7 +40,8 @@ function lookup() {
     countries.forEach(country => {
         country.forEach(type => {
             let regex = type[2];
-            if (regex.test(query)) {
+            let match = query.match(regex);
+            if (match && query === match[0]) { // regex.test(query)
                 if (filter.includes(type[1]) || filter == "all") results.push(type[0] + ": " + type[1]);
                 found_match = true;
                 if (type[0] == IT) { // special handling for italian provinces

@@ -81,7 +81,10 @@ const pat_mg1 = "Numbering system used from 1994 to 1999.";
 const pat_mx1 = "Industrial designs or model applications";
 const pat_no1 = mys + " (old numbering system)";
 const pat_no2 = mys + " (numbering system from January 1 1974 - June 1998)";
-const pat_ro1 = mys + " (old numbering system, introduced on January 21, 1992)"
+const pat_ro1 = mys + " (old numbering system, introduced on January 21, 1992)";
+const pat_ru2 = mys + " (Numbering system used from 1992 to 1999)";
+const pat_tm1 = pat + " filed by a non-resident";
+const pat_tm2 = mys + " filed by a non-resident";
 
 const pat_kr1 = pat + " filed before 1999";
 const pat_kr2 = pat_pct + "filed before 1999";

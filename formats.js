@@ -1,3 +1,8 @@
+const r_y = /[1,2][8,9,0]\d{2}/;
+const r_y_2 = /[012789]\d/; // needs to be updated in the 2030s but acts as useful constraint for now
+const r_last = /\s\d{5}/;
+
+
 const austrian_pat = [AT, pat, /^a \d{3}\/\d{4}$/i];
 const austrian_spc = [AT, spc, /^sz \d{3}\/\d{4}$/i];
 const austrian_umc = [AT, umc, /^gm \d{3}\/\d{4}$/i];
@@ -197,6 +202,7 @@ const russia_tmk = [RU, tmk, /^(RU)?\d{4}[7-9]\d{5}$/];
 const russia_lay = [RU, lay, /^(RU)?\d{4}63\d{4}$/];
 const russia_prg = [RU, prg, /^(RU)?\d{4}(61|66)\d{4}$/];
 const russia_dtb = [RU, dtb, /^(RU)?\d{4}62\d{4}$/];
+const russia_old = [RU, pat_ru2, RegExp(r_y_2.source + /\d{6}/.source)];
 
 // from this point, I've started using YEAR regex properly
 const sweden_tmk = [SE, tmk, /^[1,2][8,9,0]\d{2}\/\d{5}$/i];
@@ -206,6 +212,7 @@ const sweden_pat3 = [SE, pat_se3, /^\d{2}3\d{4}-\d$/i];
 const sweden_pat5 = [SE, pat_se5, /^\d{2}5\d{4}-\d$/i];
 const sweden_pat7 = [SE, pat_se7, /^\d{2}7\d{4}-\d$/i];
 const sweden_pat9 = [SE, pat_se9, /^\d{2}9\d{4}-\d$/i];
+const sweden_old = [SE, pat_no1, /^\d{5}\/\d{2}$/];
 
 const slovakia_pat = [SK, pat_wiz, /^(PP\s?)?\d{5}-[1,2][8,9,0]\d{2}$/i];
 const slovakia_uma = [SK, umc_int, /^(PUV\s?)?\d{5}-[1,2][8,9,0]\d{2}(\s?U)?$/i];
@@ -344,9 +351,6 @@ const norway_new = [NO, mys, /^[1,2][8,9,0]\d{2}\d{4}$/];
 
 
 // Start of regex concat for reduced repitition
-const r_y = /[1,2][8,9,0]\d{2}/;
-const r_y_2 = /[012789]\d/; // this will need to be updated in the 2030s
-const r_last = /\s\d{5}/;
 
 const africa_pat = [OA, pat, RegExp(/1\s/.source + r_y.source + /\s\d{5}/.source)];
 const africa_uma = [OA, uma, RegExp(/2\s/.source + r_y.source + /\s\d{5}/.source)];
@@ -357,6 +361,19 @@ const philippines_uma = [PH, uma, RegExp(/2-/.source + r_y.source + /\d{5}/.sour
 const philippines_upc = [PH, uma_pct, RegExp(/2-/.source + r_y.source + /-5\d{5}/.source)];
 
 const pakistan_mys = [PK, mys, /^\d{5}\/\d{2}$/];
+
+const slovenia_old = [SI, pat_no1, RegExp(r_y_2.source + /\d{5}/.source)];
+const slovenia_pat = [SI, pat, RegExp(r_y.source + /[01234]\d{4}/.source)];
+const slovenia_ind = [SI, ind, RegExp(r_y.source + /[56]\d{4}/.source)];
+const slovenia_tmk = [SI, tmk, RegExp(r_y.source + /[78]\d{4}/.source)];
+
+const tajikistan_pat = [TJ, pat, RegExp(r_y_2.source + /\d{6}/.source)];
+const tajikistan_uma = [TJ, uma, RegExp(r_y_2.source + /\d{5}\sU/.source)];
+
+const turkmenistan_pat = [TM, pat, /^\d{2}\/100\d{3}$/];
+const turkmenistan_pan = [TM, pat_tm1, /^\d{2}\/100\d{3}N$/];
+const turkmenistan_myn = [TM, pat_tm2, /^\d{2}\/[^1]00\d{3}N$/];
+const turkmenistan_mys = [TM, mys, /^\d{2}\/[^1]00\d{3}$/];
 
 
 
@@ -430,8 +447,10 @@ const moldova = [moldova_pat, moldova_inn, moldova_pla, moldova_umc, moldova_ind
 const poland = [poland_pat, poland_umc, poland_tmk, poland_ind, poland_spc];
 const romania = [romania_pat, romania_umc, romania_tmk, romania_ind, romania_spc, romania_lay, romania_old];
 const serbia = [serbia_pat, serbia_inn, serbia_tmk, serbia_ind, serbia_lay];
-const russia = [russia_pat, russia_ind, russia_tmk, russia_lay, russia_prg, russia_dtb];
-const sweden = [sweden_tmk, sweden_ind, sweden_pat0, sweden_pat3, sweden_pat5, sweden_pat7, sweden_pat9];
+const russia = [russia_pat, russia_ind, russia_tmk, russia_lay, russia_prg, russia_dtb, russia_old];
+const sweden = [
+    sweden_tmk, sweden_ind, sweden_pat0, sweden_pat3, sweden_pat5, sweden_pat7, sweden_pat9, sweden_old
+];
 const slovakia = [
     slovakia_pat, slovakia_uma, slovakia_poz, slovakia_ind, slovakia_spc,
     slovakia_org, slovakia_geo, slovakia_pto
@@ -474,6 +493,13 @@ const norway = [norway_anc, norway_old, norway_new];
 const africa = [africa_pat, africa_uma];
 const philippines = [philippines_pat, philippines_pct, philippines_uma, philippines_upc];
 const pakistan = [pakistan_mys];
+const slovenia = [slovenia_ind, slovenia_pat, slovenia_tmk, slovenia_old];
+const turkmenistan = [
+    turkmenistan_pat,
+    turkmenistan_pan,
+    turkmenistan_myn,
+    turkmenistan_mys
+];
 
 const countries = [
     austria,
@@ -535,5 +561,7 @@ const countries = [
     norway,
     africa,
     philippines,
-    pakistan
+    pakistan,
+    slovenia,
+    turkmenistan
 ];

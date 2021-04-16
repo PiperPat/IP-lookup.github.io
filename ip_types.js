@@ -85,6 +85,8 @@ const pat_ro1 = mys + " (old numbering system, introduced on January 21, 1992)";
 const pat_ru2 = mys + " (Numbering system used from 1992 to 1999)";
 const pat_tm1 = pat + " filed by a non-resident";
 const pat_tm2 = mys + " filed by a non-resident";
+const pat_tt1 = "Numbering system for patent applications prior to 1996.";
+const pat_tt2 = "Numbering system for patent applications introduced as of 1996. ";
 
 const pat_kr1 = pat + " filed before 1999";
 const pat_kr2 = pat_pct + "filed before 1999";

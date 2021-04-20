@@ -40,6 +40,7 @@ const pat_app = "International patent applications under the PCT (PCT applicatio
 const pat_wiz = pat + " or " + pat_app;
 const pat_prv = "Provisional patent applications (Provisional patents)";
 const pat_pcn = pat + " and " + pat_pct;
+const pat_pre = "Preliminary " + pat;
 // swedish patents
 const pat_se0 = "national patent application submitted on paper";
 const pat_se3 = "national patent application submitted via online service Swedish Patent Application (web Online Filing)";
@@ -87,6 +88,9 @@ const pat_tm1 = pat + " filed by a non-resident";
 const pat_tm2 = mys + " filed by a non-resident";
 const pat_tt1 = "Numbering system for patent applications prior to 1996.";
 const pat_tt2 = "Numbering system for patent applications introduced as of 1996. ";
+const pat_ua1 = mys + " (Numbering system used from 1992 to 1999)";
+const pat_ua2 = mys + " (Numbering system introduced on January 1, 2000)";
+const pat_uz1 = "Patent applications";
 
 const pat_kr1 = pat + " filed before 1999";
 const pat_kr2 = pat_pct + "filed before 1999";

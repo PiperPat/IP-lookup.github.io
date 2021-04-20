@@ -222,13 +222,15 @@ const slovakia_spc = [SK, spc, /^(PDO\s?)?\d{4}-[1,2][8,9,0]\d{2}$/i];
 const slovakia_org = [SK, geo_app, /^(POP\s?)?\d{1}-[1,2][8,9,0]\d{2}$/i];
 const slovakia_geo = [SK, geo, /^(PZO\s?)?\d{1}-[1,2][8,9,0]\d{2}$/i];
 const slovakia_pto = [SK, lay, /^(PTO\s?)?\d{4}-[1,2][8,9,0]\d{2}$/i];
+const ukraine_old = [UA, pat_ua1, /^9[2-9]\d{6}$/];
+const ukraine_new = [UA, pat_ua2, RegExp(r_y.source + /\d{6}/.source)]; // 2000020923
 
 const ukraine_pat = [UA, pat_wiz, /^a\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_umc = [UA, umc, /^u\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_tmk = [UA, tmk, /^m\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_ind = [UA, ind, /^s\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_lay = [UA, lay, /^t\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
-const ukraine_qog = [UA, qog, /^u\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
+const ukraine_qog = [UA, qog, /^i\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 
 const wipo_pat = [WO, pat_pct, /^PCT\/IB[1,2][8,9,0]\d{2}\/\d{6}$/i];
 const wipo_tmk = [WO, tmk_ind, /^\d{9}$/i];
@@ -380,3 +382,7 @@ const turkey_uma = [TR, uma, /^(u\s)?([1,2][8,9,0])?\d{2}(\/|\s)\d{5}$/];
 
 const trinidad_old = [TT, pat_tt1, /^\d+(\sof\s|\/)([1,2][8,9,0]\d{2}|\d{2})$/];
 const trinidad_new = [TT, pat_tt2, /^\d{6}$/];
+
+const uzbekistan_pat = [UZ, pat_uz1, RegExp(/(IH(AP)?)?/.source + r_y_2.source + /\d{5}(\.\d)?/.source)];
+const uzbekistan_pre = [UZ, pat_pre, RegExp(/(IH(DP)?)?/.source + r_y_2.source + /\d{5}(\.\d)?/.source)];
+const uzbekistan_umc = [UZ, umc, /^(((FM(GU)?)\d{7}(\.\d)?)|(\d{7}\sU))$/];

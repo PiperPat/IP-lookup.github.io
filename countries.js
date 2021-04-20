@@ -125,7 +125,8 @@ const turkmenistan = [
 ];
 const turkey = [turkey_pat, turkey_uma];
 const trinidad = [trinidad_new, trinidad_old];
-const uzbekistan = [uzbekistan_pat, uzbekistan_pre, uzbekistan_umc]
+const uzbekistan = [uzbekistan_pat, uzbekistan_pre, uzbekistan_umc];
+const venezuela = [venezuela_mys];
 
 const countries = [
     austria,
@@ -192,5 +193,6 @@ const countries = [
     turkmenistan,
     turkey,
     trinidad,
-    uzbekistan
+    uzbekistan,
+    venezuela
 ];

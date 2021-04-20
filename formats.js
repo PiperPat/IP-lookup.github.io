@@ -386,3 +386,5 @@ const trinidad_new = [TT, pat_tt2, /^\d{6}$/];
 const uzbekistan_pat = [UZ, pat_uz1, RegExp(/(IH(AP)?)?/.source + r_y_2.source + /\d{5}(\.\d)?/.source)];
 const uzbekistan_pre = [UZ, pat_pre, RegExp(/(IH(DP)?)?/.source + r_y_2.source + /\d{5}(\.\d)?/.source)];
 const uzbekistan_umc = [UZ, umc, /^(((FM(GU)?)\d{7}(\.\d)?)|(\d{7}\sU))$/];
+
+const venezuela_mys = [VE, mys, /^\d{5}(-|\/)\d{2}$/];

@@ -14,6 +14,16 @@ document.addEventListener("keyup", function(event) {
     }
 });
 
+// helper fn for lookup() -- rms weird formatting
+function car_wash(dirty_str) {
+    let clean_str = '';
+    for (let i = 0; i < dirty_str.length; i++) {
+        if (dirty_str.charCodeAt(i) == 8211) clean_str[i] = "-";
+        else clean_str = clean_str + dirty_str[i];
+    }
+    return clean_str.trim();
+}
+
 function lookup() {
 
     let e = document.getElementById('filter');
@@ -33,7 +43,7 @@ function lookup() {
             break;
     }
 
-    let query = document.getElementById("mystery-string").value;
+    let query = car_wash(document.getElementById("mystery-string").value);
     let found_match = false;
     let results = [];
 
@@ -44,6 +54,7 @@ function lookup() {
             if (match && query === match[0]) { // regex.test(query)
                 if (filter.includes(type[1]) || filter == "all") results.push(type[0] + ": " + type[1]);
                 found_match = true;
+
                 if (type[0] == IT) { // special handling for italian provinces
                     let prov_code = query.substring(0, 2);
                     it_prov_codes.forEach(it_prov => {
@@ -52,8 +63,7 @@ function lookup() {
                             results.push(type[0] + ", province of " + it_prov[1] + ": " + type[1]);
                         }
                     });
-                }
-                if (type[0] == MX) {
+                } else if (type[0] == MX) { // special handling for mexican provinces
                     let prov_code = query.substring(0, 2);
                     mx_prov_codes.forEach(mx_prov => {
                         if (mx_prov[0] == prov_code) {
@@ -67,7 +77,6 @@ function lookup() {
     });
 
     let err = "that doesn't match any IP known format<br>";
-    err = err + "If your query number contains a hyphen, try deleting and manually typing it."
 
     if (!found_match) document.getElementById('result').innerHTML = err;
     else {

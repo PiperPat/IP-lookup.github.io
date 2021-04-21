@@ -129,6 +129,8 @@ const uzbekistan = [uzbekistan_pat, uzbekistan_pre, uzbekistan_umc];
 const venezuela = [venezuela_mys];
 const serbia_monte = [serbia_monte_mys];
 const south_africa = [s_africa_mys];
+const zambia = [zambia_mys];
+const zimbabwe = [zimbabwe_mys];
 
 const countries = [
     austria,
@@ -198,5 +200,7 @@ const countries = [
     uzbekistan,
     venezuela,
     serbia_monte,
-    south_africa
+    south_africa,
+    zambia,
+    zimbabwe
 ];

@@ -79,7 +79,7 @@ const slovakia = [
 const ukraine = [
     ukraine_pat, ukraine_umc, ukraine_tmk, ukraine_ind, ukraine_lay, ukraine_qog, ukraine_old, ukraine_new
 ];
-const wipo = [wipo_pat, wipo_tmk];
+const wipo = [wipo_pat, wipo_tmk, wipo_app];
 
 const armenia = [armenia_pat, armenia_uma];
 const argentina = [argentina_pat, argentina_uma]
@@ -127,6 +127,8 @@ const turkey = [turkey_pat, turkey_uma];
 const trinidad = [trinidad_new, trinidad_old];
 const uzbekistan = [uzbekistan_pat, uzbekistan_pre, uzbekistan_umc];
 const venezuela = [venezuela_mys];
+const serbia_monte = [serbia_monte_mys];
+const south_africa = [s_africa_mys];
 
 const countries = [
     austria,
@@ -194,5 +196,7 @@ const countries = [
     turkey,
     trinidad,
     uzbekistan,
-    venezuela
+    venezuela,
+    serbia_monte,
+    south_africa
 ];

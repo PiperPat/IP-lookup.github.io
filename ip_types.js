@@ -91,6 +91,7 @@ const pat_tt2 = "Numbering system for patent applications introduced as of 1996.
 const pat_ua1 = mys + " (Numbering system used from 1992 to 1999)";
 const pat_ua2 = mys + " (Numbering system introduced on January 1, 2000)";
 const pat_uz1 = "Patent applications";
+const pat_pct_old = "PCT applications filed (numbers quoted January 1, 2004)";
 
 const pat_kr1 = pat + " filed before 1999";
 const pat_kr2 = pat_pct + "filed before 1999";

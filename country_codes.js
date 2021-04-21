@@ -255,3 +255,4 @@ const WO = "World Intellectual Property Organization";
 const CS = "Czechoslovakia (Ceased to exist on December 31, 1992)";
 const ITO = "Italy";
 const OA = "African Intellectual Property Organization (OAPI)";
+const YU = "Serbia and Montenegro"

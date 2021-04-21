@@ -232,8 +232,9 @@ const ukraine_ind = [UA, ind, /^s\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_lay = [UA, lay, /^t\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_qog = [UA, qog, /^i\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 
-const wipo_pat = [WO, pat_pct, /^PCT\/IB[1,2][8,9,0]\d{2}\/\d{6}$/i];
+const wipo_pat = [WO, pat_pct, /^PCT\/[A-Z]{2}[1,2][8,9,0]\d{2}\/\d{6}$/i];
 const wipo_tmk = [WO, tmk_ind, /^\d{9}$/i];
+const wipo_app = [WO, pat_pct_old, /^PCT\/[A-Z]{2}\d{2}\/\d{5}$/] //PCT/DE79/00016
 
 // end of "current" PDF (which doesn't have NZ, US) -- starting on "historic" pdf
 // for consistency, if no \s in pdf, no \s? in regex. This will be exact.
@@ -388,3 +389,7 @@ const uzbekistan_pre = [UZ, pat_pre, RegExp(/(IH(DP)?)?/.source + r_y_2.source +
 const uzbekistan_umc = [UZ, umc, /^(((FM(GU)?)\d{7}(\.\d)?)|(\d{7}\sU))$/];
 
 const venezuela_mys = [VE, mys, /^\d{5}(-|\/)\d{2}$/];
+
+const serbia_monte_mys = [YU, mys, /^P?\d{4}\/\d{2}$/]
+
+const s_africa_mys = [ZA, mys, /^\d{2}\/\d{4}$/];

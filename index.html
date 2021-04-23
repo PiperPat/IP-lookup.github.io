@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP numbering lookup | Pipers </title>
-    <script src='country_codes.js'></script>
-    <script src='ip_types.js'></script>
-    <script src='formats.js'></script>
-    <script src='filters.js'></script>
-    <script src='italian_province_codes.js'></script>
-    <script src='mexican_province_codes.js'></script>
-    <script src='countries.js'></script>
-    <script src='lookup.js'></script>
+    <script src='scripts/country_codes.js'></script>
+    <script src='scripts/ip_types.js'></script>
+    <script src='scripts/formats.js'></script>
+    <script src='scripts/filters.js'></script>
+    <script src='scripts/italian_province_codes.js'></script>
+    <script src='scripts/mexican_province_codes.js'></script>
+    <script src='scripts/countries.js'></script>
+    <script src='scripts/lookup.js'></script>
     <link rel='stylesheet' href='style/main.css'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> 
@@ -24,24 +24,30 @@
                 <img src="http://piperpat.com/static/images/logo.png" class='pipers-logo'></a>
             <img src='img/redunicorn-2.jpg' class='unicorn-img'>
         </div>
-        <div class='pipers-grey'>
+        <div class='pipers-grey top-band'>
             <h1 class='main-pg-title txt-white'>IP numbering lookup</h1>
+            <ul class='txt-white top-links'>
+                <li><a class='txt-white top-link' href='http://piperpat.com/'>home</a></li>
+                <li><a class='txt-white top-link' href='http://wwwattorneys.piperpat.com/'>worldwide attorneys</a></li>
+            </ul>
         </div>
     </header>
     <div id='main-content'>
-        <label for="mystery-string">Enter IP number:</label>
-        <input type="text" id="mystery-string" name="mystery-string">
-        <label>IP type</label>
-        <select name='filter' id='filter'>
-            <option value='all' selected disabled hidden>select search filter</option>
-            <option value='all'>none</option>
-            <option value='pat'>patents</option>
-            <option value='tmk'>trademarks</option>
-            <option value='ind'>designs</option>
-            <option value='oth'>other</option>
-        </select>
-        <button onclick="lookup()">look up</button>
-        <br>
+        <div class='search-stuff'>
+            <label for="mystery-string">Enter IP number:</label>
+            <input type="text" id="mystery-string" name="mystery-string">
+            <label>IP type</label>
+            <select name='filter' id='filter'>
+                <option value='all' selected disabled hidden>select search filter</option>
+                <option value='all'>none</option>
+                <option value='pat'>patents</option>
+                <option value='tmk'>trademarks</option>
+                <option value='ind'>designs</option>
+                <option value='oth'>other</option>
+            </select>
+            <button onclick="lookup()">look up</button>
+        </div>
+        
         <p id='result'></p>
         <table id='results'>
             <th class='results-cntry'>country</th>
@@ -49,5 +55,8 @@
             <th class='results-detls'>details</th>
         </table>
     </div>
+    <footer>
+        &copy pipers 2021
+    </footer>
 </body>
 </html>

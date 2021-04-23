@@ -54,7 +54,8 @@ function lookup() {
             if (match && query === match[0]) { // regex.test(query)
                 if (filter.includes(type[1]) || filter == "all") results.push(
                     "<td>" + type[0] + "</td>" + 
-                    "<td>" + type[1] + "</td>"
+                    "<td>" + type[1] + "</td>" +
+                    "<td></td>"
                     );
                 found_match = true;
 

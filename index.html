@@ -1,6 +1,10 @@
-<!DOCTYPE html5>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP numbering lookup | Pipers </title>
     <script src='country_codes.js'></script>
     <script src='ip_types.js'></script>
     <script src='formats.js'></script>
@@ -9,7 +13,9 @@
     <script src='mexican_province_codes.js'></script>
     <script src='countries.js'></script>
     <script src='lookup.js'></script>
-    <link rel='stylesheet' href='main.css'> 
+    <link rel='stylesheet' href='style/main.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header class='pipers-header'>
@@ -19,23 +25,29 @@
             <img src='img/redunicorn-2.jpg' class='unicorn-img'>
         </div>
         <div class='pipers-grey'>
-            <h1 class='txt-white'>IP numbering lookup</h1>
+            <h1 class='main-pg-title txt-white'>IP numbering lookup</h1>
         </div>
     </header>
-    <br>
-    <label for="mystery-string">Enter IP number:</label>
-    <input type="text" id="mystery-string" name="mystery-string">
-    <label>IP type</label>
-    <select name='filter' id='filter'>
-        <option value='all' selected disabled hidden>select search filter</option>
-        <option value='all'>none</option>
-        <option value='pat'>patents</option>
-        <option value='tmk'>trademarks</option>
-        <option value='ind'>designs</option>
-        <option value='oth'>other</option>
-    </select>
-    <button onclick="lookup()">look up</button>
-    <br>
-    <p id='result'></p>
+    <div id='main-content'>
+        <label for="mystery-string">Enter IP number:</label>
+        <input type="text" id="mystery-string" name="mystery-string">
+        <label>IP type</label>
+        <select name='filter' id='filter'>
+            <option value='all' selected disabled hidden>select search filter</option>
+            <option value='all'>none</option>
+            <option value='pat'>patents</option>
+            <option value='tmk'>trademarks</option>
+            <option value='ind'>designs</option>
+            <option value='oth'>other</option>
+        </select>
+        <button onclick="lookup()">look up</button>
+        <br>
+        <p id='result'></p>
+        <table id='results'>
+            <th>country</th>
+            <th>description</th>
+            <th>details</th>
+        </table>
+    </div>
 </body>
 </html>

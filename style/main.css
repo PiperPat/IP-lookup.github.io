@@ -1,4 +1,7 @@
-* {margin: 0}
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
 .header-imgs {
     padding: 30px 0;
 }
@@ -15,6 +18,33 @@
 }
 .pipers-grey {background-color: rgb(150, 158, 150);}
 .txt-white {color: white}
+.main-pg-title {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+#main-content {
+    width: 100%;
+    max-width: 800px;
+    padding-top: 50px;
+    margin: auto;
+}
+
+
+#results {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+}
+
+#results th {
+    background-color: rgb(204, 0, 1);
+    color: white;
+    text-align: left;
+    padding: 5px;
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+}
 
 @media only screen and (min-width: 800px) {
     .header-imgs {
@@ -35,5 +65,6 @@
         grid-column: 3;
         margin-right: 0;
     }
+    
 
 }

@@ -397,3 +397,5 @@ const s_africa_mys = [ZA, mys, /^\d{2}\/\d{4}$/];
 const zambia_mys = [ZM, mys, /^\d{3}\/\d{2}$/];
 
 const zimbabwe_mys = [ZW, mys, /^\d{2}\/\d{2}$/];
+
+const new_zild_mys = [NZ, mys, /^\d{6}$/];

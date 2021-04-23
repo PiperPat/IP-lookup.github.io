@@ -52,23 +52,22 @@ function lookup() {
             let regex = type[2];
             let match = query.match(regex);
             if (match && query === match[0]) { // regex.test(query)
-                if (filter.includes(type[1]) || filter == "all") results.push(type[0] + ": " + type[1]);
+                if (filter.includes(type[1]) || filter == "all") results.push(
+                    "<td>" + type[0] + "</td>" + 
+                    "<td>" + type[1] + "</td>"
+                    );
                 found_match = true;
 
-                if (type[0] == IT) { // special handling for italian provinces
+                if (type[0] == IT || type[0] == MX) { // special handling for italian & mexican provinces
                     let prov_code = query.substring(0, 2);
-                    it_prov_codes.forEach(it_prov => {
-                        if (it_prov[0] == prov_code) {
+                    it_prov_codes.forEach(country_prov => {
+                        if (country_prov[0] == prov_code) {
                             results.pop();
-                            results.push(type[0] + ", province of " + it_prov[1] + ": " + type[1]);
-                        }
-                    });
-                } else if (type[0] == MX) { // special handling for mexican provinces
-                    let prov_code = query.substring(0, 2);
-                    mx_prov_codes.forEach(mx_prov => {
-                        if (mx_prov[0] == prov_code) {
-                            results.pop();
-                            results.push(type[0] + " (province of " + mx_prov[1] + "): " + type[1]);
+                            results.push(
+                                "<td>" + type[0] + "</td>" +
+                                "<td>" + type[1] + "</td>" +
+                                "<td> province of " + country_prov[1] + "</td>"
+                                );
                         }
                     });
                 }
@@ -83,8 +82,13 @@ function lookup() {
         let html = "";
         if (results.length > 1) html = html + "<strong>That query matches more than one IP numbering system</strong><br>";
         results.forEach(hit => {
-            html = html + hit + " <br>";
+            // html = html + "<tr>" + hit + " <tr>";
+            let new_row = document.createElement("tr");
+            new_row.innerHTML = hit;
+            document.getElementById('results').appendChild(new_row);
         });
-        document.getElementById('result').innerHTML = html;
+        
+        // document.getElementById('result').innerHTML = html;
+        
     }
 }

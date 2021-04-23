@@ -1,0 +1,39 @@
+* {margin: 0}
+.header-imgs {
+    padding: 30px 0;
+}
+.pipers-logo {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+.pipers-logo:hover {
+    cursor: pointer;
+}
+.unicorn-img {
+    display: none;
+}
+.pipers-grey {background-color: rgb(150, 158, 150);}
+.txt-white {color: white}
+
+@media only screen and (min-width: 800px) {
+    .header-imgs {
+        display: grid;
+        grid-template-columns: 240px 435px 125px;
+        padding: 30px 0;
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+    }
+    .pipers-logo {
+        padding: 10px;
+        grid-column: 1;
+    }
+    .unicorn-img {
+        display: block;
+        width: 125px;
+        grid-column: 3;
+        margin-right: 0;
+    }
+
+}

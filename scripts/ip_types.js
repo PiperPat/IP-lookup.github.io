@@ -28,6 +28,7 @@ const prg = "Computer programs";
 const dtb = "Databases";
 const qog = "Qualified indications of origin of goods";
 const mys = "Unknown application type";
+const des = "Registered design"
 
 const uma_pct = uma + " (PCT)";
 
@@ -41,7 +42,7 @@ const pat_wiz = pat + " or " + pat_app;
 const pat_prv = "Provisional patent applications (Provisional patents)";
 const pat_pcn = pat + " and " + pat_pct;
 const pat_pre = "Preliminary " + pat;
-// swedish patents
+const pat_gra = 'Granted patent';
 const pat_se0 = "national patent application submitted on paper";
 const pat_se3 = "national patent application submitted via online service Swedish Patent Application (web Online Filing)";
 const pat_se5 = "national patent application submitted via online service Online Filing (epoline Online Filing (eOLF))";

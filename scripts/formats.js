@@ -398,4 +398,10 @@ const zambia_mys = [ZM, mys, /^\d{3}\/\d{2}$/];
 
 const zimbabwe_mys = [ZW, mys, /^\d{2}\/\d{2}$/];
 
-const new_zild_mys = [NZ, mys, /^\d{6}$/];
+const new_zealand_pat = [NZ, pat, /^NZ\d{6}([ABCD]\d?)?$/];
+const new_zealand_des = [NZ, des, /^\d{6}$/]
+
+
+const usa_uma = [US, uma, /^US((\d{2},\d{3},\d{3})|(\d{1},\d{3},\d{3})|(\d{3},\d{3}))$/];
+const usa_pat = [US, pat_gra, /^US\d{7}[ABCD]$/]; //US9560345B2 -- US201361820104P -- US20020126116A1
+const usa_des = [US, des, /^USD\d{6}S\d$/]; //USD755562S1

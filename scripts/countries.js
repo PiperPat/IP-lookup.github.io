@@ -131,7 +131,8 @@ const serbia_monte = [serbia_monte_mys];
 const south_africa = [s_africa_mys];
 const zambia = [zambia_mys];
 const zimbabwe = [zimbabwe_mys];
-const new_zealand = [new_zild_mys];
+const new_zealand = [new_zealand_pat, new_zealand_des];
+const united_states = [usa_des, usa_pat, usa_uma];
 
 const countries = [
     austria,
@@ -204,5 +205,6 @@ const countries = [
     south_africa,
     zambia,
     zimbabwe,
-    new_zealand
+    new_zealand,
+    united_states
 ];

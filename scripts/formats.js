@@ -398,10 +398,17 @@ const zambia_mys = [ZM, mys, /^\d{3}\/\d{2}$/];
 
 const zimbabwe_mys = [ZW, mys, /^\d{2}\/\d{2}$/];
 
-const new_zealand_pat = [NZ, pat, /^NZ\d{6}([ABCD]\d?)?$/];
+const new_zealand_pat = [NZ, pat, /^(NZ)?\d{6}([ABCD]\d?)?$/];
 const new_zealand_des = [NZ, des, /^\d{6}$/]
 
 
-const usa_uma = [US, uma, /^US((\d{2},\d{3},\d{3})|(\d{1},\d{3},\d{3})|(\d{3},\d{3}))$/];
+const usa_uma = [US, uma, /^US((\d{2},?\d{3},?\d{3})|(\d{1},?\d{3},?\d{3})|(\d{3},?\d{3}))$/];
+const usa_rei = [US, rei, /^RE\d{6}$/];
+const usa_pla = [US, pat_pla, /^PP\d{6}$/];
+const usa_design_1 = [US, des, /^D\d{7}$/];
+const usa_aoi = [US, aoi, /^AI\d{6}$/];
+const usa_x_pat = [US, pat_usx, /^X\d{7}$/];
+const usa_h_doc = [US, pat_ush, /^H\d{7}$/];
+const usa_t_doc = [US, pat_ust, /^T\d{7}$/];
+const usa_design_2 = [US, des, /^USD\d{6}S\d$/]; //USD755562S1
 const usa_pat = [US, pat_gra, /^US\d{7}[ABCD]$/]; //US9560345B2 -- US201361820104P -- US20020126116A1
-const usa_des = [US, des, /^USD\d{6}S\d$/]; //USD755562S1

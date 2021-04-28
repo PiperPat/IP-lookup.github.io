@@ -132,7 +132,18 @@ const south_africa = [s_africa_mys];
 const zambia = [zambia_mys];
 const zimbabwe = [zimbabwe_mys];
 const new_zealand = [new_zealand_pat, new_zealand_des];
-const united_states = [usa_des, usa_pat, usa_uma];
+const united_states = [
+    usa_uma,
+    usa_rei,
+    usa_pla,
+    usa_design_1,
+    usa_aoi,
+    usa_x_pat,
+    usa_h_doc,
+    usa_t_doc,
+    usa_design_2,
+    usa_pat
+];
 
 const countries = [
     austria,

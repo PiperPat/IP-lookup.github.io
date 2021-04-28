@@ -26,6 +26,14 @@ function car_wash(dirty_str) {
 
 function lookup() {
 
+    document.getElementById('results').innerHTML = '';
+    let empty_table_html = `
+        <th class='results-cntry'>country</th>  
+        <th class='results-descr'>description</th>
+        <th class='results-detls'>details</th>
+        `;
+    document.getElementById('results').innerHTML = empty_table_html;
+
     let e = document.getElementById('filter');
     let filter = e.value;
     switch (filter) {
@@ -83,13 +91,9 @@ function lookup() {
         let html = "";
         if (results.length > 1) html = html + "<strong>That query matches more than one IP numbering system</strong><br>";
         results.forEach(hit => {
-            // html = html + "<tr>" + hit + " <tr>";
             let new_row = document.createElement("tr");
             new_row.innerHTML = hit;
             document.getElementById('results').appendChild(new_row);
-        });
-        
-        // document.getElementById('result').innerHTML = html;
-        
+        });        
     }
 }

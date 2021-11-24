@@ -45,6 +45,8 @@ const pat_prv = "Provisional patent applications (Provisional patents)";
 const pat_pcn = pat + " and " + pat_pct;
 const pat_pre = "Preliminary " + pat;
 const pat_gra = 'Granted patent';
+const pct_pub = "PCT publication";
+const pct_app = "PCT application";
 
 const pat_se0 = "national patent application submitted on paper";
 const pat_se3 = "national patent application submitted via online service Swedish Patent Application (web Online Filing)";

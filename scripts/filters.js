@@ -17,7 +17,9 @@ filters.pat = [
     pat_se5,
     pat_se7,
     pat_se9,
-    pat_pcn
+    pat_pcn,
+    pct_pub,
+    pct_app
 ];
 filters.tmk = [
     all,

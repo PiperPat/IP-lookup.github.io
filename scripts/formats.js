@@ -233,8 +233,14 @@ const ukraine_lay = [UA, lay, /^t\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 const ukraine_qog = [UA, qog, /^i\s?[1,2][8,9,0]\d{2}\s?\d{5}$/i];
 
 const wipo_pat = [WO, pat_pct, /^PCT\/[A-Z]{2}[1,2][8,9,0]\d{2}\/\d{6}$/i];
-const wipo_tmk = [WO, tmk_ind, /^\d{9}$/i];
+const wipo_tmd = [WO, tmk_ind, /^\d{9}$/i];
+const wipo_tmk = [WO, tmk, /^(WO)?\d{7}$/i];
 const wipo_app = [WO, pat_pct_old, /^PCT\/[A-Z]{2}\d{2}\/\d{5}$/] //PCT/DE79/00016
+const pct_pat = [WO, pct_pub, RegExp(/^(WO)?$/.source + r_y.source + /\d{6}/.source)] // PCT Publication: WO2020231273    ==> WO 2020 231273
+// const pct_apl = [WO, pct_app, RegExp(/^PCT[A-Za-z]{2}$/.source + /\d{10}/.source)]
+const pct_apl = [WO, pct_app, /^PCT[A-Za-z]{2}\d{10}$/i] // PCT Application: PCTNZ2020050042 ==> PCT NZ 2020 050042    
+
+
 
 // end of "current" PDF (which doesn't have NZ, US) -- starting on "historic" pdf
 // for consistency, if no \s in pdf, no \s? in regex. This will be exact.

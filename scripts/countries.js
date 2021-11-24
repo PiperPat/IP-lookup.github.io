@@ -79,7 +79,7 @@ const slovakia = [
 const ukraine = [
     ukraine_pat, ukraine_umc, ukraine_tmk, ukraine_ind, ukraine_lay, ukraine_qog, ukraine_old, ukraine_new
 ];
-const wipo = [wipo_pat, wipo_tmk, wipo_app];
+const wipo = [wipo_pat, wipo_tmd, wipo_tmk, wipo_app, pct_pat, pct_apl];
 
 const armenia = [armenia_pat, armenia_uma];
 const argentina = [argentina_pat, argentina_uma]
